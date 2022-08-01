@@ -26,14 +26,14 @@
 			<tbody>
 				<c:forEach var="BookService" items="${allbookservice}">
 					<tr>
-						<td>${BookService.booking_id}</td>
-						<td>${BookService.service_centre_id}</td>
-						<td>${BookService.vehicle_reg_number}</td>
-						<td>${BookService.user_id}</td>
-						<td>${BookService.service_date}</td>
-						<td>${BookService.return_date}</td>
-						<td>${BookService.service_estimate_amount}</td>
-						<td>${BookService.actual_service_amount}</td>
+						<td>${BookService.bookingId}</td>
+						<td>${BookService.serviceCentreId}</td>
+						<td>${BookService.vehicleRegNumber}</td>
+						<td>${BookService.userId}</td>
+						<td>${BookService.serviceDate}</td>
+						<td>${BookService.returnDate}</td>
+						<td>${BookService.serviceEstimateAmount}</td>
+						<td>${BookService.actualServiceAmount}</td>
 					</tr>
 				</c:forEach>
 			</tbody>

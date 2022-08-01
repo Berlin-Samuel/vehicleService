@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.chainsys.vehicleservice.pojo.VehicleType;
+import com.chainsys.vehicleservice.model.VehicleType;
 import com.chainsys.vehicleservice.service.VehicleTypeService;
 
 @Controller

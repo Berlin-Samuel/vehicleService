@@ -24,12 +24,12 @@
 			<tbody>
 				<c:forEach var="UserDetails" items="${alluserdetails}">
 					<tr>
-						<td>${UserDetails.user_id}</td>
-						<td>${UserDetails.user_name}</td>
-						<td>${UserDetails.aadhar_number}</td>
-						<td>${UserDetails.mobile_number}</td>
-						<td>${UserDetails.user_email}</td>
-						<td>${UserDetails.user_password}</td>
+						<td>${UserDetails.userId}</td>
+						<td>${UserDetails.userName}</td>
+						<td>${UserDetails.aadharNumber}</td>
+						<td>${UserDetails.mobileNumber}</td>
+						<td>${UserDetails.userEmail}</td>
+						<td>${UserDetails.userPassword}</td>
 					</tr>
 				</c:forEach>
 			</tbody>

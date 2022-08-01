@@ -4,15 +4,15 @@ import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.chainsys.vehicleservice.pojo.Service;
+import com.chainsys.vehicleservice.model.Services;
 
-public interface ServiceRepository extends CrudRepository<Service, Integer> {
+public interface ServiceRepository extends CrudRepository<Services, Integer> {
 
-	Service findById(int id);
+	Services findById(int id);
 
-	Service save(Service service);
+	Services save(Services service);
 
 	void deleteById(int id);
 
-	List<Service> findAll();
+	List<Services> findAll();
 }

@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.chainsys.vehicleservice.pojo.BookService;
+import com.chainsys.vehicleservice.model.BookService;
 
 public interface BookServiceRepository extends CrudRepository<BookService, Integer> {
 	BookService findById(int id);

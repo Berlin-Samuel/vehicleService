@@ -13,39 +13,39 @@
 		<div id="form">
 			<form:form action="updateuser" method="post" modelAttribute="updateuserdetails">
 				<div>
-					<label for="user_id">User Id</label>
+					<label for="userId">User Id</label>
 					<div>
-						<form:input path="user_id" />
+						<form:input path="userId" />
 					</div>
 				</div>
 				<div>
-					<label for="user_name">User Name</label>
+					<label for="userName">User Name</label>
 					<div>
-						<form:input path="user_name" />
+						<form:input path="userName" />
 					</div>
 				</div>
 				<div>
-					<label for="aadhar_number">Aadhar Number</label>
+					<label for="aadharNumber">Aadhar Number</label>
 					<div>
-						<form:input path="aadhar_number" />
+						<form:input path="aadharNumber" />
 					</div>
 				</div>
 				<div>
-					<label for="mobile_number">Mobile Number</label>
+					<label for="mobileNumber">Mobile Number</label>
 					<div>
-						<form:input path="mobile_number" />
+						<form:input path="mobileNumber" />
 					</div>
 				</div>
 				<div>
-					<label for="user_email">User Email</label>
+					<label for="userEmail">User Email</label>
 					<div>
-						<form:input path="user_email" />
+						<form:input path="userEmail" />
 					</div>
 				</div>
 				<div>
-					<label for="user_password">User Password</label>
+					<label for="userPassword">User Password</label>
 					<div>
-						<form:input path="user_password" />
+						<form:input path="userPassword" />
 					</div>
 				</div>
 				<div>

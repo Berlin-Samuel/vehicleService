@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.chainsys.vehicleservice.pojo.ServiceDetails;
+import com.chainsys.vehicleservice.model.ServiceDetails;
 
 public interface ServiceDetailsRepository extends CrudRepository<ServiceDetails, Integer>{
 	ServiceDetails findById(int id);

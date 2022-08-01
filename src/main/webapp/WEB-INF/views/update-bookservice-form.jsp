@@ -13,51 +13,51 @@
 		<div id="form">
 			<form:form action="updateservice" method="post" modelAttribute="updatebookservice">
 				<div>
-					<label for="booking_id">Booking Id</label>
+					<label for="bookingId">Booking Id</label>
 					<div>
-						<form:input path="booking_id" />
+						<form:input path="bookingId" />
 					</div>
 				</div>
 				<div>
-					<label for="service_centre_id">Service Centre Id</label>
+					<label for="serviceCentreId">Service Centre Id</label>
 					<div>
-						<form:input path="service_centre_id" />
+						<form:input path="serviceCentreId" />
 					</div>
 				</div>
 				<div>
-					<label for="vehicle_reg_number">Vehicle Register Number</label>
+					<label for="vehicleRegNumber">Vehicle Register Number</label>
 					<div>
-						<form:input path="vehicle_reg_number" />
+						<form:input path="vehicleRegNumber" />
 					</div>
 				</div>
 				<div>
-					<label for="user_id">User Id</label>
+					<label for="userId">User Id</label>
 					<div>
-						<form:input path="user_id" />
+						<form:input path="userId" />
 					</div>
 				</div>
 				<div>
-					<label for="service_date">Service Date</label>
+					<label for="serviceDate">Service Date</label>
 					<div>
-						<form:input path="service_date" />
+						<form:input path="serviceDate" />
 					</div>
 				</div>
 				<div>
-					<label for="return_date">Return Date</label>
+					<label for="returnDate">Return Date</label>
 					<div>
-						<form:input path="return_date" />
+						<form:input path="returnDate" />
 					</div>
 				</div>
 				<div>
-					<label for="service_estimate_amount">Service Estimate Amount</label>
+					<label for="serviceEstimateAmount">Service Estimate Amount</label>
 					<div>
-						<form:input path="service_estimate_amount" />
+						<form:input path="serviceEstimateAmount" />
 					</div>
 				</div>
 				<div>
-					<label for="actual_service_amount">Actual Service Amount</label>
+					<label for="actualServiceAmount">Actual Service Amount</label>
 					<div>
-						<form:input path="actual_service_amount" />
+						<form:input path="actualServiceAmount" />
 					</div>
 				</div>
 				<div>

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.chainsys.vehicleservice.pojo.ServiceCentre;
+import com.chainsys.vehicleservice.model.ServiceCentre;
 import com.chainsys.vehicleservice.service.ServiceCentreService;
 import com.chainsys.vehicleservice.service.UserDetailsService;
 

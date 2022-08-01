@@ -28,16 +28,16 @@
 			<tbody>
 				<c:forEach var="VehicleType" items="${allvehicletype}">
 					<tr>
-						<td>${VehicleType.vehicle_reg_number}</td>
-						<td>${VehicleType.vehicle_type}</td>
-						<td>${VehicleType.vehicle_color}</td>
-						<td>${VehicleType.vehicle_model}</td>
-						<td>${VehicleType.vehicle_date_purchase}</td>
-						<td>${VehicleType.vehicle_fc_date}</td>
-						<td>${VehicleType.insurance_from}</td>
-						<td>${VehicleType.insurance_to}</td>
-						<td>${VehicleType.insurance_company_name}</td>
-						<td>${VehicleType.user_id}</td>
+						<td>${VehicleType.vehicleRegNumber}</td>
+						<td>${VehicleType.vehicleType}</td>
+						<td>${VehicleType.vehicleColor}</td>
+						<td>${VehicleType.vehicleModel}</td>
+						<td>${VehicleType.vehicleDatePurchase}</td>
+						<td>${VehicleType.vehicleFcDate}</td>
+						<td>${VehicleType.insuranceFrom}</td>
+						<td>${VehicleType.insuranceTo}</td>
+						<td>${VehicleType.insuranceCompanyName}</td>
+						<td>${VehicleType.userId}</td>
 					</tr>
 				</c:forEach>
 			</tbody>

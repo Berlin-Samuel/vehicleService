@@ -13,45 +13,45 @@
 		<div id="form">
 			<form:form action="addcentre" method="post" modelAttribute="addservicecentre">
 				<div>
-					<label for="service_centre_id">Service Centre Id</label>
+					<label for="serviceCentreId">Service Centre Id</label>
 					<div>
-						<form:input path="service_centre_id" />
+						<form:input path="serviceCentreId" />
 					</div>
 				</div>
 				<div>
-					<label for="centre_location">Centre Location</label>
+					<label for="centreLocation">Centre Location</label>
 					<div>
-						<form:input path="centre_location" />
+						<form:input path="centreLocation" />
 					</div>
 				</div>
 				<div>
-					<label for="centre_phone_number">Centre Phone Number</label>
+					<label for="centrePhoneNumber">Centre Phone Number</label>
 					<div>
-						<form:input path="centre_phone_number" />
+						<form:input path="centrePhoneNumber" />
 					</div>
 				</div>
 				<div>
-					<label for="centre_email">Centre Email</label>
+					<label for="centreEmail">Centre Email</label>
 					<div>
-						<form:input path="centre_email" />
+						<form:input path="centreEmail" />
 					</div>
 				</div>
 				<div>
-					<label for="centre_address">Centre Address</label>
+					<label for="centreAddress">Centre Address</label>
 					<div>
-						<form:input path="centre_address" />
+						<form:input path="centreAddress" />
 					</div>
 				</div>
 				<div>
-					<label for="contact_person_name">Contact Person Name</label>
+					<label for="contactPersonName">Contact Person Name</label>
 					<div>
-						<form:input path="contact_person_name" />
+						<form:input path="contactPersonName" />
 					</div>
 				</div>
 				<div>
-					<label for="contact_person_role">Contact Person Role</label>
+					<label for="contactPersonRole">Contact Person Role</label>
 					<div>
-						<form:input path="contact_person_role" />
+						<form:input path="contactPersonRole" />
 					</div>
 				</div>
 				<div>

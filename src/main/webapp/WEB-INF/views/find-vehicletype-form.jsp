@@ -13,62 +13,62 @@
 		<div id="form">
 			<form:form action="" method="post" modelAttribute="vehicletype">
 				<div>
-					<label for="vehicle_reg_number">Vehicle Register Number</label>
+					<label for="vehicleRegNumber">Vehicle Register Number</label>
 					<div>
-						<form:input path="vehicle_reg_number"  readonly="true" />
+						<form:input path="vehicleRegNumber"  readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="vehicle_type">Vehicle Type</label>
+					<label for="vehicleType">Vehicle Type</label>
 					<div>
-						<form:input path="vehicle_type" readonly="true" />
+						<form:input path="vehicleType" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="vehicle_color">Vehicle Color</label>
+					<label for="vehicleColor">Vehicle Color</label>
 					<div>
-						<form:input path="vehicle_color" readonly="true" />
+						<form:input path="vehicleColor" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="vehicle_model">Vehicle Model</label>
+					<label for="vehicleModel">Vehicle Model</label>
 					<div>
-						<form:input path="vehicle_model" readonly="true" />
+						<form:input path="vehicleModel" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="vehicle_date_purchase">Vehicle Date Purchase</label>
+					<label for="vehicleDatePurchase">Vehicle Date Purchase</label>
 					<div>
-						<form:input path="vehicle_date_purchase" readonly="true"/>
+						<form:input path="vehicleDatePurchase" readonly="true"/>
 					</div>
 				</div>
 				<div>
-					<label for="vehicle_fc_date">Vehicle Fc Date</label>
+					<label for="vehicleFcDate">Vehicle Fc Date</label>
 					<div>
-						<form:input path="vehicle_fc_date" readonly="true" />
+						<form:input path="vehicleFcDate" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="insurance_from">Insurance From</label>
+					<label for="insuranceFrom">Insurance From</label>
 					<div>
-						<form:input path="insurance_from" readonly="true" />
+						<form:input path="insuranceFrom" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="insurance_to">Insurance To</label>
+					<label for="insuranceTo">Insurance To</label>
 					<div>
-						<form:input path="insurance_to" readonly="true" />
+						<form:input path="insuranceTo" readonly="true" />
 					</div>
 				</div><div>
-					<label for="insurance_company_name">Insurance Company Name</label>
+					<label for="insuranceCompanyName">Insurance Company Name</label>
 					<div>
-						<form:input path="insurance_company_name" readonly="true" />
+						<form:input path="insuranceCompanyName" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="user_id">User Id</label>
+					<label for="userId">User Id</label>
 					<div>
-						<form:input path="user_id" readonly="true"/>
+						<form:input path="userId" readonly="true"/>
 					</div>
 				</div>
 			</form:form>

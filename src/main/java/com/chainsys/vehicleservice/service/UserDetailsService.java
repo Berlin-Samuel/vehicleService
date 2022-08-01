@@ -3,7 +3,8 @@ package com.chainsys.vehicleservice.service;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.chainsys.vehicleservice.pojo.UserDetails;
+
+import com.chainsys.vehicleservice.model.UserDetails;
 import com.chainsys.vehicleservice.repository.UserDetailsRepository;
 
 @Service

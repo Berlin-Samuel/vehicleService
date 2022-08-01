@@ -13,62 +13,62 @@
 		<div id="form">
 			<form:form action="updatevehicle" method="post" modelAttribute="updatevehicletype">
 				<div>
-					<label for="vehicle_reg_number">Vehicle Register Number</label>
+					<label for="vehicleRegNumber">Vehicle Register Number</label>
 					<div>
-						<form:input path="vehicle_reg_number" />
+						<form:input path="vehicleRegNumber" />
 					</div>
 				</div>
 				<div>
-					<label for="vehicle_type">Vehicle Type</label>
+					<label for="vehicleType">Vehicle Type</label>
 					<div>
-						<form:input path="vehicle_type" />
+						<form:input path="vehicleType" />
 					</div>
 				</div>
 				<div>
-					<label for="vehicle_color">Vehicle Color</label>
+					<label for="vehicleColor">Vehicle Color</label>
 					<div>
-						<form:input path="vehicle_color" />
+						<form:input path="vehicleColor" />
 					</div>
 				</div>
 				<div>
-					<label for="vehicle_model">Vehicle Model</label>
+					<label for="vehicleModel">Vehicle Model</label>
 					<div>
-						<form:input path="vehicle_model" />
+						<form:input path="vehicleModel" />
 					</div>
 				</div>
 				<div>
-					<label for="vehicle_date_purchase">Vehicle Date Purchase</label>
+					<label for="vehicleDatePurchase">Vehicle Date Purchase</label>
 					<div>
-						<form:input path="vehicle_date_purchase" />
+						<form:input path="vehicleDatePurchase" />
 					</div>
 				</div>
 				<div>
-					<label for="vehicle_fc_date">Vehicle Fc Date</label>
+					<label for="vehicleFcDate">Vehicle Fc Date</label>
 					<div>
-						<form:input path="vehicle_fc_date" />
+						<form:input path="vehicleFcDate" />
 					</div>
 				</div>
 				<div>
-					<label for="insurance_from">Insurance From</label>
+					<label for="insuranceFrom">Insurance From</label>
 					<div>
-						<form:input path="insurance_from" />
+						<form:input path="insuranceFrom" />
 					</div>
 				</div>
 				<div>
-					<label for="insurance_to">Insurance To</label>
+					<label for="insuranceTo">Insurance To</label>
 					<div>
-						<form:input path="insurance_to" />
+						<form:input path="insuranceTo" />
 					</div>
 				</div><div>
-					<label for="insurance_company_name">Insurance Company Name</label>
+					<label for="insuranceCompanyName">Insurance Company Name</label>
 					<div>
-						<form:input path="insurance_company_name" />
+						<form:input path="insuranceCompanyName" />
 					</div>
 				</div>
 				<div>
-					<label for="user_id">User Id</label>
+					<label for="userId">User Id</label>
 					<div>
-						<form:input path="user_id" />
+						<form:input path="userId" />
 					</div>
 				</div>
 				

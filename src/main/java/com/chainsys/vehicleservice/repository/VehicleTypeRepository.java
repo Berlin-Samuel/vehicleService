@@ -5,7 +5,7 @@ import java.util.Optional;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.chainsys.vehicleservice.pojo.VehicleType;
+import com.chainsys.vehicleservice.model.VehicleType;
 
 public interface VehicleTypeRepository extends CrudRepository<VehicleType, String> {
 

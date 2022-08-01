@@ -25,13 +25,13 @@
 			<tbody>
 				<c:forEach var="ServiceCentre" items="${allservicecentre}">
 					<tr>
-						<td>${ServiceCentre.service_centre_id}</td>
-						<td>${ServiceCentre.centre_location}</td>
-						<td>${ServiceCentre.centre_phone_number}</td>
-						<td>${ServiceCentre.centre_email}</td>
-						<td>${ServiceCentre.centre_address}</td>
-						<td>${ServiceCentre.contact_person_name}</td>
-						<td>${ServiceCentre.contact_person_role}</td>
+						<td>${ServiceCentre.serviceCentreId}</td>
+						<td>${ServiceCentre.centreLocation}</td>
+						<td>${ServiceCentre.centrePhoneNumber}</td>
+						<td>${ServiceCentre.centreEmail}</td>
+						<td>${ServiceCentre.centreAddress}</td>
+						<td>${ServiceCentre.contactPersonName}</td>
+						<td>${ServiceCentre.contactPersonRole}</td>
 					</tr>
 				</c:forEach>
 			</tbody>

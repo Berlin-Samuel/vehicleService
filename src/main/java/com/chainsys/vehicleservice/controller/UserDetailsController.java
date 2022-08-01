@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.chainsys.vehicleservice.pojo.UserDetails;
+import com.chainsys.vehicleservice.model.UserDetails;
 import com.chainsys.vehicleservice.service.UserDetailsService;
 
 @Controller

@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.chainsys.vehicleservice.pojo.UserDetails;
+import com.chainsys.vehicleservice.model.UserDetails;
 
 public interface UserDetailsRepository extends CrudRepository<UserDetails, Integer> {
 	UserDetails findById(int id);

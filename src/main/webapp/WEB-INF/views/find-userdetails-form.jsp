@@ -13,39 +13,39 @@
 		<div id="form">
 			<form:form method="get" modelAttribute="userdetails">
 				<div>
-					<label for="user_id">User Id</label>
+					<label for="userId">User Id</label>
 					<div>
-						<form:input path="user_id" readonly="true" />
+						<form:input path="userId" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="user_name">User Name</label>
+					<label for="userName">User Name</label>
 					<div>
-						<form:input path="user_name" readonly="true" />
+						<form:input path="userName" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="aadhar_number">Aadhar Number</label>
+					<label for="aadharNumber">Aadhar Number</label>
 					<div>
-						<form:input path="aadhar_number" readonly="true" />
+						<form:input path="aadharNumber" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="mobile_number">Mobile Number</label>
+					<label for="mobileNumber">Mobile Number</label>
 					<div>
-						<form:input path="mobile_number" readonly="true" />
+						<form:input path="mobileNumber" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="user_email">User Email</label>
+					<label for="userEmail">User Email</label>
 					<div>
-						<form:input path="user_email" readonly="true" />
+						<form:input path="userEmail" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="user_password">User Password</label>
+					<label for="userPassword">User Password</label>
 					<div>
-						<form:input path="user_password" readonly="true" />
+						<form:input path="userPassword" readonly="true" />
 					</div>
 				</div>
 			</form:form>
