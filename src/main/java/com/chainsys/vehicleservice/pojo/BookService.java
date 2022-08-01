@@ -1,7 +1,6 @@
 package com.chainsys.vehicleservice.pojo;
 
 import java.util.Date;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
 @Entity

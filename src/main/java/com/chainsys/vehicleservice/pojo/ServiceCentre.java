@@ -6,7 +6,7 @@ import javax.persistence.Id;
 @Entity
 public class ServiceCentre {
 	@Id
-	private int service_centre_id ;
+	private int service_centre_id;
 	private String centre_location;
 	private long centre_phone_number;
 	private String centre_email;

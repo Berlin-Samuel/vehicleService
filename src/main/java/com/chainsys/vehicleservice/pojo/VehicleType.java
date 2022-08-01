@@ -15,7 +15,7 @@ public class VehicleType {
 	private Date vehicle_fc_date;
 	private Date insurance_from;
 	private Date insurance_to;
-	private String inurance_company_name;
+	private String insurance_company_name;
 	private int user_id;
 	
 	public String getVehicle_reg_number() {
@@ -66,11 +66,11 @@ public class VehicleType {
 	public void setInsurance_to(Date insurance_to) {
 		this.insurance_to = insurance_to;
 	}
-	public String getInurance_company_name() {
-		return inurance_company_name;
+	public String getInsurance_company_name() {
+		return insurance_company_name;
 	}
-	public void setInurance_company_name(String inurance_company_name) {
-		this.inurance_company_name = inurance_company_name;
+	public void setInsurance_company_name(String insurance_company_name) {
+		this.insurance_company_name = insurance_company_name;
 	}
 	public int getUser_id() {
 		return user_id;
