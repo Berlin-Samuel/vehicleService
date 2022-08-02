@@ -15,7 +15,7 @@ import com.chainsys.vehicleservice.model.BookService;
 import com.chainsys.vehicleservice.service.BookServiceService;
 
 @Controller
-@RequestMapping("/vehicleservice")
+@RequestMapping("/vehiclebookservice")
 public class BookServiceController {
 	@Autowired
 	private BookServiceService bookserviceservice;
@@ -37,7 +37,7 @@ public class BookServiceController {
 	@PostMapping("/addservice")
 	public String addBookService(@ModelAttribute("addbookservice") BookService bookService) {
 		bookserviceservice.addBookService(bookService);
-		return "redirect:/vehicleservice/bookservicelist";
+		return "redirect:/vehiclebookservice/bookservicelist";
 	}
 
 	@GetMapping("/updatebookservice")
@@ -50,13 +50,13 @@ public class BookServiceController {
 	@PostMapping("/updateservice")
 	public String updateBookService(@ModelAttribute("updatebookservice") BookService bookService) {
 		bookserviceservice.addBookService(bookService);
-		return "redirect:/vehicleservice/bookservicelist";
+		return "redirect:/vehiclebookservice/bookservicelist";
 	}
 
 	@GetMapping("/deletebookservice")
 	public String deleteBookService(@RequestParam("serviceid") int id) {
 		bookserviceservice.deleteBookServicebyId(id);
-		return "redirect:/vehicleservice/bookservicelist";
+		return "redirect:/vehiclebookservice/bookservicelist";
 	}
 
 	@GetMapping("/bookservicelist")

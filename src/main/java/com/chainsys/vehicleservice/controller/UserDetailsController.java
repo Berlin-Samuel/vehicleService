@@ -15,7 +15,7 @@ import com.chainsys.vehicleservice.model.UserDetails;
 import com.chainsys.vehicleservice.service.UserDetailsService;
 
 @Controller
-@RequestMapping("/vehicleservice")
+@RequestMapping("/vehicleuserdetails")
 public class UserDetailsController {
 	@Autowired
 	private UserDetailsService userdetailsservice;
@@ -37,7 +37,7 @@ public class UserDetailsController {
 	@PostMapping("/adduser")
 	public String addUserDetail(@ModelAttribute("adduserdetails") UserDetails userDetails) {
 		userdetailsservice.addUserDetails(userDetails);
-		return "redirect:/vehicleservice/userlist";
+		return "redirect:/vehicleuserdetails/userlist";
 	}
 
 	@GetMapping("/updateuserdetails")
@@ -50,13 +50,13 @@ public class UserDetailsController {
 	@PostMapping("/updateuser")
 	public String updateUserDetail(@ModelAttribute("updateuserdetails") UserDetails userDetails) {
 		userdetailsservice.addUserDetails(userDetails);
-		return "redirect:/vehicleservice/userlist";
+		return "redirect:/vehicleuserdetails/userlist";
 	}
 
 	@GetMapping("/deleteuser")
 	public String deleteUserDetails(@RequestParam("userid") int id) {
 		userdetailsservice.deleteUserDetailsbyId(id);
-		return "redirect:/vehicleservice/userlist";
+		return "redirect:/vehicleuserdetails/userlist";
 	}
 
 	@GetMapping("/userlist")

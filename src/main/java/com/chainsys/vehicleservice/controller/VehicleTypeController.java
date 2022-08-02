@@ -2,7 +2,6 @@ package com.chainsys.vehicleservice.controller;
 
 import java.util.List;
 import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,7 +15,7 @@ import com.chainsys.vehicleservice.model.VehicleType;
 import com.chainsys.vehicleservice.service.VehicleTypeService;
 
 @Controller
-@RequestMapping("/vehicleservice")
+@RequestMapping("/vehicletype")
 public class VehicleTypeController {
 	@Autowired
 	private VehicleTypeService vehicletypeservice;
@@ -38,7 +37,7 @@ public class VehicleTypeController {
 	@PostMapping("/addvehicle")
 	public String addVehicleType(@ModelAttribute("addvehicletype") VehicleType vehicleType) {
 		vehicletypeservice.addVehicleType(vehicleType);
-		return "redirect:/vehicleservice/vehicletypelist";
+		return "redirect:/vehicletype/vehicletypelist";
 	}
 
 	@GetMapping("/updatevehicletype")
@@ -51,13 +50,13 @@ public class VehicleTypeController {
 	@PostMapping("/updatevehicle")
 	public String updateVehicleType(@ModelAttribute("updatevehicletype") VehicleType vehicleType) {
 		vehicletypeservice.addVehicleType(vehicleType);
-		return "redirect:/vehicleservice/vehicletypelist";
+		return "redirect:/vehicletype/vehicletypelist";
 	}
 
 	@GetMapping("/deletevehicletype")
 	public String deleteVehicleType(@RequestParam("userid") String id) {
 		vehicletypeservice.deleteVehicleTypebyId(id);
-		return "redirect:/vehicleservice/vehicletypelist";
+		return "redirect:/vehicletype/vehicletypelist";
 	}
 
 	@GetMapping("/vehicletypelist")

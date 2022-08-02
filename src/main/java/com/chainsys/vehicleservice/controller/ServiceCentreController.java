@@ -16,13 +16,13 @@ import com.chainsys.vehicleservice.service.ServiceCentreService;
 import com.chainsys.vehicleservice.service.UserDetailsService;
 
 @Controller
-@RequestMapping("/vehicleservice")
+@RequestMapping("/vehicleservicecentre")
 public class ServiceCentreController {
 	@Autowired
 	private ServiceCentreService servicecentreservice;
 
 	@GetMapping("/getservicedetailbyid")
-	public String getUserId(@RequestParam("id") int id, Model model) {
+	public String getServiceCentreId(@RequestParam("id") int id, Model model) {
 		ServiceCentre serviceCentre = servicecentreservice.findServiceCentrebyId(id);
 		model.addAttribute("servicecentre", serviceCentre);
 		return "find-servicecentre-form";
@@ -38,7 +38,7 @@ public class ServiceCentreController {
 	@PostMapping("/addcentre")
 	public String addServiceCentre(@ModelAttribute("addservicecentre") ServiceCentre serviceCentre) {
 		servicecentreservice.addServiceCentre(serviceCentre);
-		return "redirect:/vehicleservice/servicecentrelist";
+		return "redirect:/vehicleservicecentre/servicecentrelist";
 	}
 
 	@GetMapping("/updateservicecentre")
@@ -51,13 +51,13 @@ public class ServiceCentreController {
 	@PostMapping("/updatecentre")
 	public String updateServiceCentre(@ModelAttribute("updateservicecentre") ServiceCentre serviceCentre) {
 		servicecentreservice.addServiceCentre(serviceCentre);
-		return "redirect:/vehicleservice/servicecentrelist";
+		return "redirect:/vehicleservicecentre/servicecentrelist";
 	}
 
 	@GetMapping("/deleteservicecentre")
 	public String deleteServiceCentre(@RequestParam("userid") int id) {
 		servicecentreservice.deleteServiceCentrebyId(id);
-		return "redirect:/vehicleservice/servicecentrelist";
+		return "redirect:/vehicleservicecentre/servicecentrelist";
 	}
 
 	@GetMapping("/servicecentrelist")
