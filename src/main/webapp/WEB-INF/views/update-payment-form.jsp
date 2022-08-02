@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Add Payment</title>
+<title>Update Payment</title>
 </head>
 <body>
 <div id="root">
@@ -37,7 +37,7 @@
 					</div>
 				</div>
 				<div>
-					<form:button>Add Payment</form:button>
+					<form:button>Update Payment</form:button>
 				</div>
 			</form:form>
 		</div>

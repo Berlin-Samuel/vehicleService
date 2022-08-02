@@ -18,11 +18,11 @@ import com.chainsys.vehicleservice.service.VehicleTypeService;
 @RequestMapping("/vehicletype")
 public class VehicleTypeController {
 	@Autowired
-	private VehicleTypeService vehicletypeservice;
+	private VehicleTypeService vehicleTypeService;
 
 	@GetMapping("/getvehicletypebyid")
 	public String getVehicleTypeId(@RequestParam("id") String id, Model model) {
-		Optional<VehicleType> vehicleType = vehicletypeservice.findVehicleTypebyId(id);
+		Optional<VehicleType> vehicleType = vehicleTypeService.findVehicleTypebyId(id);
 		model.addAttribute("vehicletype", vehicleType);
 		return "find-vehicletype-form";
 	}
@@ -36,32 +36,32 @@ public class VehicleTypeController {
 
 	@PostMapping("/addvehicle")
 	public String addVehicleType(@ModelAttribute("addvehicletype") VehicleType vehicleType) {
-		vehicletypeservice.addVehicleType(vehicleType);
+		vehicleTypeService.addVehicleType(vehicleType);
 		return "redirect:/vehicletype/vehicletypelist";
 	}
 
 	@GetMapping("/updatevehicletype")
 	public String showUpdateForm(@RequestParam("vehicleid") String id, Model model) {
-		Optional<VehicleType> vehicleType = vehicletypeservice.findVehicleTypebyId(id);
+		Optional<VehicleType> vehicleType = vehicleTypeService.findVehicleTypebyId(id);
 		model.addAttribute("updatevehicletype", vehicleType);
 		return "update-vehicletype-form";
 	}
 
 	@PostMapping("/updatevehicle")
 	public String updateVehicleType(@ModelAttribute("updatevehicletype") VehicleType vehicleType) {
-		vehicletypeservice.addVehicleType(vehicleType);
+		vehicleTypeService.addVehicleType(vehicleType);
 		return "redirect:/vehicletype/vehicletypelist";
 	}
 
 	@GetMapping("/deletevehicletype")
 	public String deleteVehicleType(@RequestParam("userid") String id) {
-		vehicletypeservice.deleteVehicleTypebyId(id);
+		vehicleTypeService.deleteVehicleTypebyId(id);
 		return "redirect:/vehicletype/vehicletypelist";
 	}
 
 	@GetMapping("/vehicletypelist")
 	public String getAllVehicleType(Model model) {
-		List<VehicleType> vehicleType = vehicletypeservice.getVehicleType();
+		List<VehicleType> vehicleType = vehicleTypeService.getVehicleType();
 		model.addAttribute("allvehicletype", vehicleType);
 		return "list-vehicletype";
 	}

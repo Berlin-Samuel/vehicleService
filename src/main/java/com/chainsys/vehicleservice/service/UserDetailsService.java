@@ -10,23 +10,23 @@ import com.chainsys.vehicleservice.repository.UserDetailsRepository;
 @Service
 public class UserDetailsService {
 	@Autowired
-	private UserDetailsRepository userdetailsrepo;
+	private UserDetailsRepository userDetailsRepository;
 
 	public List<UserDetails> getUserDetails() {
-		List<UserDetails> userdetails = userdetailsrepo.findAll();
-		return userdetails;
+		List<UserDetails> userDetails = userDetailsRepository.findAll();
+		return userDetails;
 	}
 
 	public void deleteUserDetailsbyId(int id) {
-		userdetailsrepo.deleteById(id);
+		userDetailsRepository.deleteById(id);
 	}
 
 	public void addUserDetails(UserDetails userDetails) {
-		userdetailsrepo.save(userDetails);
+		userDetailsRepository.save(userDetails);
 	}
 
 	public UserDetails findUserDetailsbyId(int id) {
-		UserDetails userdetailsservice = userdetailsrepo.findById(id);
-		return userdetailsservice;
+		UserDetails userDetailsService = userDetailsRepository.findById(id);
+		return userDetailsService;
 	}
 }

@@ -9,25 +9,25 @@ import com.chainsys.vehicleservice.model.ServiceCentre;
 import com.chainsys.vehicleservice.repository.ServiceCentreRepository;
 
 @Service
-public class ServiceCentreService {
+public class ServiceOfServiceCentre {
 	@Autowired
-	private ServiceCentreRepository servicecentrerepo;
+	private ServiceCentreRepository serviceCentreRepository;
 
 	public List<ServiceCentre> getServiceCentre() {
-		List<ServiceCentre> servicecentre = servicecentrerepo.findAll();
-		return servicecentre;
+		List<ServiceCentre> serviceCentre = serviceCentreRepository.findAll();
+		return serviceCentre;
 	}
 
 	public void deleteServiceCentrebyId(int id) {
-		servicecentrerepo.deleteById(id);
+		serviceCentreRepository.deleteById(id);
 	}
 
-	public void addServiceCentre(ServiceCentre servicecentre) {
-		servicecentrerepo.save(servicecentre);
+	public void addServiceCentre(ServiceCentre serviceCentre) {
+		serviceCentreRepository.save(serviceCentre);
 	}
 
 	public ServiceCentre findServiceCentrebyId(int id) {
-		ServiceCentre servicecentreservice = servicecentrerepo.findById(id);
-		return servicecentreservice;
+		ServiceCentre serviceCentre = serviceCentreRepository.findById(id);
+		return serviceCentre;
 	}
 }

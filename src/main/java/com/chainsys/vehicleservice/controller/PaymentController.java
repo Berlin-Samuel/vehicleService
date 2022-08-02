@@ -16,10 +16,10 @@ import com.chainsys.vehicleservice.service.PaymentService;
 @RequestMapping("/vehiclepayment")
 public class PaymentController {
 	@Autowired
-	private PaymentService paymentservice;
+	private PaymentService paymentService;
 	@GetMapping("/getpaymentdetailbyid")
 	public String getPaymentId(@RequestParam("id") int id, Model model) {
-		Payment payment = paymentservice.findPaymentbyId(id);
+		Payment payment = paymentService.findPaymentbyId(id);
 		model.addAttribute("payment", payment);
 		return "find-payment-form";
 	}
@@ -31,28 +31,28 @@ public class PaymentController {
 	}
 	@PostMapping("/addpayments")
 	public String addPayment(@ModelAttribute("addpayment") Payment payment) {
-		paymentservice.addPayment(payment);
+		paymentService.addPayment(payment);
 		return "redirect:/vehiclepayment/paymentlist";
 }
 	@GetMapping("/updatepayment")
 	public String showPaymentForm(@RequestParam("paymentid") int id, Model model) {
-		Payment payment = paymentservice.findPaymentbyId(id);
+		Payment payment = paymentService.findPaymentbyId(id);
 		model.addAttribute("updatepayment", payment);
 		return "update-payment-form";
 	}
 	@PostMapping("/updatepayments")
 	public String updatePayment(@ModelAttribute("updatepayment") Payment payment) {
-		paymentservice.addPayment(payment);
-		return "redirect:/vehicleservicecentre/paymentlist";
+		paymentService.addPayment(payment);
+		return "redirect:/vehiclepayment/paymentlist";
 	}
 	@GetMapping("/deletepayment")
 	public String deletePayment(@RequestParam("userid") int id) {
-		paymentservice.deletePaymentbyId(id);
-		return "redirect:/vehicleservicecentre/paymentlist";
+		paymentService.deletePaymentbyId(id);
+		return "redirect:/vehiclepayment/paymentlist";
 	}
 	@GetMapping("/paymentlist")
 	public String getAllPayment(Model model) {
-		List<Payment> payment = paymentservice.getPayment();
+		List<Payment> payment = paymentService.getPayment();
 		model.addAttribute("allpayment", payment);
 		return "list-payment";
 	}

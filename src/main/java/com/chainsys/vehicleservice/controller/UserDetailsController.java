@@ -18,11 +18,11 @@ import com.chainsys.vehicleservice.service.UserDetailsService;
 @RequestMapping("/vehicleuserdetails")
 public class UserDetailsController {
 	@Autowired
-	private UserDetailsService userdetailsservice;
+	private UserDetailsService userDetailsService;
 
 	@GetMapping("/getuserbyid")
 	public String getUserId(@RequestParam("id") int id, Model model) {
-		UserDetails userDetails = userdetailsservice.findUserDetailsbyId(id);
+		UserDetails userDetails = userDetailsService.findUserDetailsbyId(id);
 		model.addAttribute("userdetails", userDetails);
 		return "find-userdetails-form";
 	}
@@ -36,32 +36,32 @@ public class UserDetailsController {
 
 	@PostMapping("/adduser")
 	public String addUserDetail(@ModelAttribute("adduserdetails") UserDetails userDetails) {
-		userdetailsservice.addUserDetails(userDetails);
+		userDetailsService.addUserDetails(userDetails);
 		return "redirect:/vehicleuserdetails/userlist";
 	}
 
 	@GetMapping("/updateuserdetails")
 	public String showUpdateForm(@RequestParam("userid") int id, Model model) {
-		UserDetails userDetails = userdetailsservice.findUserDetailsbyId(id);
+		UserDetails userDetails = userDetailsService.findUserDetailsbyId(id);
 		model.addAttribute("updateuserdetails", userDetails);
 		return "update-userdetails-form";
 	}
 
 	@PostMapping("/updateuser")
 	public String updateUserDetail(@ModelAttribute("updateuserdetails") UserDetails userDetails) {
-		userdetailsservice.addUserDetails(userDetails);
+		userDetailsService.addUserDetails(userDetails);
 		return "redirect:/vehicleuserdetails/userlist";
 	}
 
 	@GetMapping("/deleteuser")
 	public String deleteUserDetails(@RequestParam("userid") int id) {
-		userdetailsservice.deleteUserDetailsbyId(id);
+		userDetailsService.deleteUserDetailsbyId(id);
 		return "redirect:/vehicleuserdetails/userlist";
 	}
 
 	@GetMapping("/userlist")
 	public String getAllUserDetails(Model model) {
-		List<UserDetails> userDetails = userdetailsservice.getUserDetails();
+		List<UserDetails> userDetails = userDetailsService.getUserDetails();
 		model.addAttribute("alluserdetails", userDetails);
 		return "list-userdetails";
 	}

@@ -12,18 +12,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.chainsys.vehicleservice.model.ServiceCentre;
-import com.chainsys.vehicleservice.service.ServiceCentreService;
-import com.chainsys.vehicleservice.service.UserDetailsService;
+import com.chainsys.vehicleservice.service.ServiceOfServiceCentre;
 
 @Controller
 @RequestMapping("/vehicleservicecentre")
 public class ServiceCentreController {
 	@Autowired
-	private ServiceCentreService servicecentreservice;
+	private ServiceOfServiceCentre serviceOfServiceCentre;
 
 	@GetMapping("/getservicedetailbyid")
 	public String getServiceCentreId(@RequestParam("id") int id, Model model) {
-		ServiceCentre serviceCentre = servicecentreservice.findServiceCentrebyId(id);
+		ServiceCentre serviceCentre = serviceOfServiceCentre.findServiceCentrebyId(id);
 		model.addAttribute("servicecentre", serviceCentre);
 		return "find-servicecentre-form";
 	}
@@ -37,32 +36,32 @@ public class ServiceCentreController {
 
 	@PostMapping("/addcentre")
 	public String addServiceCentre(@ModelAttribute("addservicecentre") ServiceCentre serviceCentre) {
-		servicecentreservice.addServiceCentre(serviceCentre);
+		serviceOfServiceCentre.addServiceCentre(serviceCentre);
 		return "redirect:/vehicleservicecentre/servicecentrelist";
 	}
 
 	@GetMapping("/updateservicecentre")
 	public String showUpdateForm(@RequestParam("centreid") int id, Model model) {
-		ServiceCentre serviceCentre = servicecentreservice.findServiceCentrebyId(id);
+		ServiceCentre serviceCentre = serviceOfServiceCentre.findServiceCentrebyId(id);
 		model.addAttribute("updateservicecentre", serviceCentre);
 		return "update-servicecentre-form";
 	}
 
 	@PostMapping("/updatecentre")
 	public String updateServiceCentre(@ModelAttribute("updateservicecentre") ServiceCentre serviceCentre) {
-		servicecentreservice.addServiceCentre(serviceCentre);
+		serviceOfServiceCentre.addServiceCentre(serviceCentre);
 		return "redirect:/vehicleservicecentre/servicecentrelist";
 	}
 
 	@GetMapping("/deleteservicecentre")
 	public String deleteServiceCentre(@RequestParam("userid") int id) {
-		servicecentreservice.deleteServiceCentrebyId(id);
+		serviceOfServiceCentre.deleteServiceCentrebyId(id);
 		return "redirect:/vehicleservicecentre/servicecentrelist";
 	}
 
 	@GetMapping("/servicecentrelist")
 	public String getAllServiceCentre(Model model) {
-		List<ServiceCentre> serviceCentre = servicecentreservice.getServiceCentre();
+		List<ServiceCentre> serviceCentre = serviceOfServiceCentre.getServiceCentre();
 		model.addAttribute("allservicecentre", serviceCentre);
 		return "list-servicecentre";
 	}

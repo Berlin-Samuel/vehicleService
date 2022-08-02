@@ -8,24 +8,24 @@ import com.chainsys.vehicleservice.model.BookService;
 import com.chainsys.vehicleservice.repository.BookServiceRepository;
 
 @Service
-public class BookServiceService {
+public class ServiceOfBookService {
 	@Autowired
-	private BookServiceRepository bookservicerepo;
+	private BookServiceRepository bookServiceRepository;
 
 	public List<BookService> getBookService() {
-		List<BookService> bookservice = bookservicerepo.findAll();
-		return bookservice;
+		List<BookService> bookService = bookServiceRepository.findAll();
+		return bookService;
 	}
 	public void deleteBookServicebyId(int id) {
-		bookservicerepo.deleteById(id);
+		bookServiceRepository.deleteById(id);
 	}
 
-	public void addBookService(BookService bookservice) {
-		bookservicerepo.save(bookservice);
+	public void addBookService(BookService bookService) {
+		bookServiceRepository.save(bookService);
 	}
 
 	public BookService findBookServicebyId(int id) {
-		BookService bookservice = bookservicerepo.findById(id);
-		return bookservice;
+		BookService bookService = bookServiceRepository.findById(id);
+		return bookService;
 	}
 }

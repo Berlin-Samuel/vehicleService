@@ -6,12 +6,12 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Update Service</title>
+<title>View Service</title>
 </head>
 <body>
 <div id="root">
 		<div id="form">
-			<form:form action="" method="post" modelAttribute="serviceservice">
+			<form:form action="" method="post" modelAttribute="vehicleservice">
 				<div>
 					<label for="serviceDetailId">Service Detail Id</label>
 					<div>

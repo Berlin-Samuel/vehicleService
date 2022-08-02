@@ -11,7 +11,7 @@ public interface ServiceRepository extends CrudRepository<Services, Integer> {
 
 	Services findById(int id);
 
-	Services save(Services service);
+	Services save(Services services);
 
 	void deleteById(int id);
 

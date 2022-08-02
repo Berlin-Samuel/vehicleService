@@ -9,22 +9,22 @@ import com.chainsys.vehicleservice.model.Services;
 import com.chainsys.vehicleservice.repository.ServiceRepository;
 
 @Service
-public class ServiceService {
+public class ServiceOfService {
 	@Autowired
-	private ServiceRepository servicerepo;
+	private ServiceRepository serviceRepository;
 	
 	public List<Services> getService() {
-		List<Services> service = servicerepo.findAll();
-		return service;
+		List<Services> services = serviceRepository.findAll();
+		return services;
 }
 	public void deleteServicebyId(int id) {
-		servicerepo.deleteById(id);
+		serviceRepository.deleteById(id);
 	}
-	public void addService(Services service) {
-		servicerepo.save(service);
+	public void addService(Services services) {
+		serviceRepository.save(services);
 	}
 	public Services findServicebyId(int id) {
-		Services service = servicerepo.findById(id);
-		return service;
+		Services services = serviceRepository.findById(id);
+		return services;
 	}
 }

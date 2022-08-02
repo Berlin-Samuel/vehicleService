@@ -10,19 +10,18 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import com.chainsys.vehicleservice.model.BookService;
-import com.chainsys.vehicleservice.service.BookServiceService;
+import com.chainsys.vehicleservice.service.ServiceOfBookService;
 
 @Controller
 @RequestMapping("/vehiclebookservice")
 public class BookServiceController {
 	@Autowired
-	private BookServiceService bookserviceservice;
+	private ServiceOfBookService bookServiceService;
 
 	@GetMapping("/getbookservicebyid")
 	public String getBookServiceId(@RequestParam("id") int id, Model model) {
-		BookService bookService = bookserviceservice.findBookServicebyId(id);
+		BookService bookService = bookServiceService.findBookServicebyId(id);
 		model.addAttribute("bookservice", bookService);
 		return "find-bookservice-form";
 	}
@@ -36,32 +35,32 @@ public class BookServiceController {
 
 	@PostMapping("/addservice")
 	public String addBookService(@ModelAttribute("addbookservice") BookService bookService) {
-		bookserviceservice.addBookService(bookService);
+		bookServiceService.addBookService(bookService);
 		return "redirect:/vehiclebookservice/bookservicelist";
 	}
 
 	@GetMapping("/updatebookservice")
 	public String showUpdateForm(@RequestParam("id") int id, Model model) {
-		BookService bookService = bookserviceservice.findBookServicebyId(id);
+		BookService bookService = bookServiceService.findBookServicebyId(id);
 		model.addAttribute("updatebookservice", bookService);
 		return "update-bookservice-form";
 	}
 
 	@PostMapping("/updateservice")
 	public String updateBookService(@ModelAttribute("updatebookservice") BookService bookService) {
-		bookserviceservice.addBookService(bookService);
+		bookServiceService.addBookService(bookService);
 		return "redirect:/vehiclebookservice/bookservicelist";
 	}
 
 	@GetMapping("/deletebookservice")
 	public String deleteBookService(@RequestParam("serviceid") int id) {
-		bookserviceservice.deleteBookServicebyId(id);
+		bookServiceService.deleteBookServicebyId(id);
 		return "redirect:/vehiclebookservice/bookservicelist";
 	}
 
 	@GetMapping("/bookservicelist")
 	public String getAllBookService(Model model) {
-		List<BookService> bookService = bookserviceservice.getBookService();
+		List<BookService> bookService = bookServiceService.getBookService();
 		model.addAttribute("allbookservice", bookService);
 		return "list-bookservice";
 	}

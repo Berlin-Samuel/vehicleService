@@ -11,7 +11,7 @@ public class ServiceDetails {
 	@Column(name="service_detail_id")
 	private int serviceDetailId;
 	@Column(name="booking_id")
-	private int bookingId;
+	private int  bookingId;
 	@Column(name="service_charges")
 	private int serviceCharges;
 	@Column(name="service_date")

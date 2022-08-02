@@ -11,7 +11,7 @@
 <body>
 <div id="root">
 		<div id="form">
-			<form:form action="addservice" method="post" modelAttribute="addservices">
+			<form:form action="addservice" method="post" modelAttribute="serviceadd">
 				<div>
 					<label for="serviceDetailId">Service Detail Id</label>
 					<div>
