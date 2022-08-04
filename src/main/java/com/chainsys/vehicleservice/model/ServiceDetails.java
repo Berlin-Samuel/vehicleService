@@ -5,11 +5,14 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
 @Entity
+@IdClass(ServiceDetailsCompositeKey.class)
 public class ServiceDetails {
 	@Id
 	@Column(name="service_detail_id")
 	private int serviceDetailId;
+	@Id
 	@Column(name="booking_id")
 	private int  bookingId;
 	@Column(name="service_charges")
