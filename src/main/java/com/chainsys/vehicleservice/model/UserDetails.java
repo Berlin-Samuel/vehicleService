@@ -1,29 +1,58 @@
 package com.chainsys.vehicleservice.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @Entity
 public class UserDetails {
 	@Id
-	@Column(name="user_id")
+	@Column(name = "user_id")
 	private int userId;
-	
-	@Column(name="user_name")
+
+	@Column(name = "user_name")
 	private String userName;
-	
-	@Column(name="aadhar_number")
+
+	@Column(name = "aadhar_number")
 	private long aadharNumber;
-	
-	@Column(name="mobile_number")
+
+	@Column(name = "mobile_number")
 	private long mobileNumber;
-	
-	@Column(name="user_email")
+
+	@Column(name = "user_email")
 	private String userEmail;
-	
-	@Column(name="user_password")
+
+	@Column(name = "user_password")
 	private String userPassword;
+
+	@OneToMany(mappedBy = "userDetails", fetch = FetchType.LAZY)
+	private List<VehicleType> vehicleTypeList;
+
+	public List<VehicleType> getVehicleTypeList() {
+		return vehicleTypeList;
+	}
+
+	public void setVehicleTypeList(List<VehicleType> vehicleTypeList) {
+		this.vehicleTypeList = vehicleTypeList;
+	}
+
+	@OneToMany(mappedBy ="userdetails", fetch = FetchType.LAZY)
+	private List<BookService> bookService;
+
+	
+
+	public List<BookService> getBookService() {
+		return bookService;
+	}
+
+	public void setBookService(List<BookService> bookService) {
+		this.bookService = bookService;
+	}
 
 	public int getUserId() {
 		return userId;
@@ -73,5 +102,4 @@ public class UserDetails {
 		this.userPassword = userPassword;
 	}
 
-	
 }

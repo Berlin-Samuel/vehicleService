@@ -9,11 +9,13 @@ import com.chainsys.vehicleservice.model.VehicleType;
 
 public interface VehicleTypeRepository extends CrudRepository<VehicleType, String> {
 
-	Optional<VehicleType> findById(String string);
+	Optional<VehicleType> findById(String id);
 
 	VehicleType save(VehicleType vehicleType);
 
 	void deleteById(String string);
 
 	List<VehicleType> findAll();
+	
+	List<VehicleType> findByUserId(int id);
 }

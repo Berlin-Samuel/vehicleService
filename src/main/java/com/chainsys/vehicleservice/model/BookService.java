@@ -1,10 +1,12 @@
- package com.chainsys.vehicleservice.model;
+package com.chainsys.vehicleservice.model;
 
 import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class BookService {
@@ -25,6 +27,38 @@ public class BookService {
 	private int serviceEstimateAmount;
 	@Column(name = "actual_service_amount")
 	private int actualServiceAmount;
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "user_id", insertable = false, updatable = false, nullable = false)
+	private UserDetails userdetails;
+
+	public UserDetails getUserdetails() {
+		return userdetails;
+	}
+
+	public void setUserdetails(UserDetails userdetails) {
+		this.userdetails = userdetails;
+	}
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "service_centre_id", insertable = false, updatable = false, nullable = false)
+	private ServiceCentre serviceCentre;
+
+	public ServiceCentre getServiceCentre() {
+		return serviceCentre;
+	}
+
+	public void setServiceCentre(ServiceCentre serviceCentre) {
+		this.serviceCentre = serviceCentre;
+	}
+
+	public UserDetails getUserDetails() {
+		return userdetails;
+	}
+
+	public void setUserDetails(UserDetails userDetails) {
+		this.userdetails = userDetails;
+	}
 
 	public int getBookingId() {
 		return bookingId;

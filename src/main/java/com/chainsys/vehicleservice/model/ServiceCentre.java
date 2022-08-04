@@ -1,8 +1,12 @@
 package com.chainsys.vehicleservice.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class ServiceCentre {
@@ -21,6 +25,17 @@ public class ServiceCentre {
 	private String contactPersonName;
 	@Column(name = "contact_person_role")
 	private String contactPersonRole;
+
+	@OneToMany(mappedBy = "bookService", fetch = FetchType.LAZY)
+	private List<BookService> bookService;
+
+	public List<BookService> getBookService() {
+		return bookService;
+	}
+
+	public void setBookService(List<BookService> bookService) {
+		this.bookService = bookService;
+	}
 
 	public int getServiceCentreId() {
 		return serviceCentreId;

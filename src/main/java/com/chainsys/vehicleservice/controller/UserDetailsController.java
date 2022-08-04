@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.chainsys.vehicleservice.dto.UserDetailsBookServiceDTO;
+import com.chainsys.vehicleservice.dto.UserDetailsVehicleTypeDTO;
 import com.chainsys.vehicleservice.model.UserDetails;
 import com.chainsys.vehicleservice.service.UserDetailsService;
 
@@ -65,4 +67,19 @@ public class UserDetailsController {
 		model.addAttribute("alluserdetails", userDetails);
 		return "list-userdetails";
 	}
+	@GetMapping("/getuserdetailvehicletype")
+    public String getUserDetailVehicleType(@RequestParam("user_id") int id,Model model) {
+		UserDetailsVehicleTypeDTO dto=userDetailsService.getUserDetailsVehicleType(id);
+        model.addAttribute("getuserdetails",dto.getUserDetails());
+        model.addAttribute("vehicletypedetails",dto.getVehicleTypeList());
+        return "userdetails-vehicletype";
+    }
+	@GetMapping("/getuserdetailbookservice")
+    public String getUserDetailBookService(@RequestParam("user_id") int id,Model model) {
+		UserDetailsBookServiceDTO dto=userDetailsService.getUserDetailsBookService(id);
+        model.addAttribute("getuserdetail",dto.getUserDetails());
+        model.addAttribute("bookservicedetails",dto.getBookService());
+        return "userdetails-bookservice";
 }
+	}
+

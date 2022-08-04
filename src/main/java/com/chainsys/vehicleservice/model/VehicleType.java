@@ -4,7 +4,12 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+import org.eclipse.jdt.internal.compiler.ast.FalseLiteral;
 
 @Entity
 public class VehicleType {
@@ -29,6 +34,18 @@ public class VehicleType {
 	private String insuranceCompanyName;
 	@Column(name = "user_id")
 	private int userId;
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "user_id", nullable = false, insertable = false, updatable = false)
+	private UserDetails userDetails;
+
+	public UserDetails getUserDetails() {
+		return userDetails;
+	}
+
+	public void setUserDetails(UserDetails userDetails) {
+		this.userDetails = userDetails;
+	}
 
 	public String getVehicleRegNumber() {
 		return VehicleRegNumber;
