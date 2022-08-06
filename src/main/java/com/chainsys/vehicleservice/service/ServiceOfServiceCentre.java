@@ -1,17 +1,11 @@
 package com.chainsys.vehicleservice.service;
 
-import java.util.Iterator;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.chainsys.vehicleservice.dto.ServiceCentreBookServiceDTO;
-import com.chainsys.vehicleservice.dto.UserDetailsVehicleTypeDTO;
 import com.chainsys.vehicleservice.model.BookService;
 import com.chainsys.vehicleservice.model.ServiceCentre;
-import com.chainsys.vehicleservice.model.UserDetails;
-import com.chainsys.vehicleservice.model.VehicleType;
 import com.chainsys.vehicleservice.repository.BookServiceRepository;
 import com.chainsys.vehicleservice.repository.ServiceCentreRepository;
 
@@ -44,10 +38,8 @@ public class ServiceOfServiceCentre {
 		ServiceCentre serviceCentre = serviceCentreRepository.findById(user_id);
 		ServiceCentreBookServiceDTO dto = new ServiceCentreBookServiceDTO();
         dto.setServiceCentre(serviceCentre);
-        List<BookService> bookServiceList = bookServiceRepository.findByUserId(user_id);
-        Iterator<BookService> iterator = bookServiceList.iterator();
-        while (iterator.hasNext())
-            dto.addBookService((BookService) iterator.next());
+        List<BookService> bookServiceList = bookServiceRepository.findByServiceCentreServiceCentreId(user_id);
+        dto.setBookService(bookServiceList);
         return dto;
     }
 }

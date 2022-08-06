@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.chainsys.vehicleservice.dto.UserDetailsVehicleTypeDTO;
+import com.chainsys.vehicleservice.dto.VehicleTypeBookServiceDTO;
 import com.chainsys.vehicleservice.model.VehicleType;
 import com.chainsys.vehicleservice.service.VehicleTypeService;
 
@@ -64,5 +66,12 @@ public class VehicleTypeController {
 		List<VehicleType> vehicleType = vehicleTypeService.getVehicleType();
 		model.addAttribute("allvehicletype", vehicleType);
 		return "list-vehicletype";
+	}
+	@GetMapping("/getvehicletypebookservice")
+	public String getVehicleTypeBookService(@RequestParam("user_id") String id, Model model) {
+		VehicleTypeBookServiceDTO dto = vehicleTypeService.getVehicleTypeBookService(id);
+		model.addAttribute("getvehicletype", dto.getVehicleType());
+		model.addAttribute("bookservicedetails", dto.getBookServiceList());
+		return "vehicletype-bookservice";
 	}
 }

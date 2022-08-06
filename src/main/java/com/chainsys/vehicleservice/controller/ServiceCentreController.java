@@ -1,7 +1,6 @@
 package com.chainsys.vehicleservice.controller;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,7 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
+import com.chainsys.vehicleservice.dto.ServiceCentreBookServiceDTO;
 import com.chainsys.vehicleservice.model.ServiceCentre;
 import com.chainsys.vehicleservice.service.ServiceOfServiceCentre;
 
@@ -64,5 +63,12 @@ public class ServiceCentreController {
 		List<ServiceCentre> serviceCentre = serviceOfServiceCentre.getServiceCentre();
 		model.addAttribute("allservicecentre", serviceCentre);
 		return "list-servicecentre";
+	}
+	@GetMapping("/getservicecentrebookservice")
+	public String getservicecentrebookservice(@RequestParam("user_id") int id, Model model) {
+		ServiceCentreBookServiceDTO dto = serviceOfServiceCentre.getServiceCentreBookServiceDTO(id);
+		model.addAttribute("getservicecentre", dto.getServiceCentre());
+		model.addAttribute("bookservicecentre", dto.getBookService());
+		return "servicecentre-bookservice";
 	}
 }

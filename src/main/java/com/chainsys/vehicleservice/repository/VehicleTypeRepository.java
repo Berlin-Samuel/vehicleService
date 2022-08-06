@@ -17,5 +17,5 @@ public interface VehicleTypeRepository extends CrudRepository<VehicleType, Strin
 
 	List<VehicleType> findAll();
 	
-	List<VehicleType> findByUserId(int id);
+	List<VehicleType> findByUserId(int user_id);
 }

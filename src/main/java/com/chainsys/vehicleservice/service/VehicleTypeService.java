@@ -1,22 +1,21 @@
 package com.chainsys.vehicleservice.service;
 
-import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.chainsys.vehicleservice.dto.UserDetailsVehicleTypeDTO;
-import com.chainsys.vehicleservice.model.UserDetails;
+import com.chainsys.vehicleservice.dto.VehicleTypeBookServiceDTO;
+import com.chainsys.vehicleservice.model.BookService;
 import com.chainsys.vehicleservice.model.VehicleType;
-import com.chainsys.vehicleservice.repository.UserDetailsRepository;
+import com.chainsys.vehicleservice.repository.BookServiceRepository;
 import com.chainsys.vehicleservice.repository.VehicleTypeRepository;
 
 @Service
 public class VehicleTypeService {
 	@Autowired
 	private VehicleTypeRepository vehicleTypeRepository;
-
+	@Autowired
+	private BookServiceRepository bookServiceRepository;
 
 	public List<VehicleType> getVehicleType() {
 		List<VehicleType> vehicleType = vehicleTypeRepository.findAll();
@@ -35,5 +34,13 @@ public class VehicleTypeService {
 		Optional<VehicleType> vehicleType = vehicleTypeRepository.findById(id);
 		return vehicleType;
 	}
-	
+
+	public VehicleTypeBookServiceDTO getVehicleTypeBookService(String user_id) {
+		Optional<VehicleType> vehicleType = vehicleTypeRepository.findById(user_id);
+		VehicleTypeBookServiceDTO dto = new VehicleTypeBookServiceDTO();
+		dto.setVehicleType(vehicleType);
+		List<BookService> bookService = bookServiceRepository.findByVehicleRegNumber(user_id);
+		dto.setBookServiceList(bookService);
+		return dto;
+	}
 }

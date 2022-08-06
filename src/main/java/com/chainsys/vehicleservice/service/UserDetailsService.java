@@ -51,7 +51,6 @@ public class UserDetailsService {
         Iterator<VehicleType> iterator = vehicleTypeList.iterator();
         while (iterator.hasNext())
             dto.addVehicleType((VehicleType) iterator.next());
-
         return dto;
     }
 	

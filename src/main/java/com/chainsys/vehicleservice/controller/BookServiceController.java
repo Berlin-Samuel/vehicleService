@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import com.chainsys.vehicleservice.dto.BookServiceServiceDetailsDTO;
 import com.chainsys.vehicleservice.model.BookService;
 import com.chainsys.vehicleservice.service.ServiceOfBookService;
 
@@ -19,6 +20,7 @@ public class BookServiceController {
 	@Autowired
 	private ServiceOfBookService bookServiceService;
 
+	
 	@GetMapping("/getbookservicebyid")
 	public String getBookServiceId(@RequestParam("id") int id, Model model) {
 		BookService bookService = bookServiceService.findBookServicebyId(id);
@@ -63,5 +65,12 @@ public class BookServiceController {
 		List<BookService> bookService = bookServiceService.getBookService();
 		model.addAttribute("allbookservice", bookService);
 		return "list-bookservice";
+	}
+	@GetMapping("/getbookserviceservicedetails")
+	public String getBookServicesServicedetails(@RequestParam("user_id") int id, Model model) {
+		BookServiceServiceDetailsDTO dto=bookServiceService.getBookServiceServiceDetails(id);
+				model.addAttribute("getbookservice", dto.getBookService());
+				model.addAttribute("servicedetailslist", dto.getServiceDetails());
+				return "bookservice-servicedetails";
 	}
 }

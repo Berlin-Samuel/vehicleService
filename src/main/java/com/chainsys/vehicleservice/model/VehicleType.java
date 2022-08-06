@@ -1,6 +1,7 @@
 package com.chainsys.vehicleservice.model;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,14 +9,13 @@ import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-
-import org.eclipse.jdt.internal.compiler.ast.FalseLiteral;
+import javax.persistence.OneToMany;
 
 @Entity
 public class VehicleType {
 	@Id
 	@Column(name = "vehicle_reg_number")
-	private String VehicleRegNumber;
+	private String vehicleRegNumber;
 	@Column(name = "vehicle_type")
 	private String vehicleType;
 	@Column(name = "vehicle_color")
@@ -39,6 +39,17 @@ public class VehicleType {
 	@JoinColumn(name = "user_id", nullable = false, insertable = false, updatable = false)
 	private UserDetails userDetails;
 
+	@OneToMany(mappedBy = "vehicleType", fetch = FetchType.LAZY)
+	private List<BookService> bookService;
+
+	public List<BookService> getBookService() {
+		return bookService;
+	}
+
+	public void setBookService(List<BookService> bookService) {
+		this.bookService = bookService;
+	}
+
 	public UserDetails getUserDetails() {
 		return userDetails;
 	}
@@ -48,11 +59,11 @@ public class VehicleType {
 	}
 
 	public String getVehicleRegNumber() {
-		return VehicleRegNumber;
+		return vehicleRegNumber;
 	}
 
 	public void setVehicleRegNumber(String vehicleRegNumber) {
-		VehicleRegNumber = vehicleRegNumber;
+		this.vehicleRegNumber = vehicleRegNumber;
 	}
 
 	public String getVehicleType() {

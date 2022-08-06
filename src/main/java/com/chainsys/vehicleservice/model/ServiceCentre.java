@@ -26,7 +26,7 @@ public class ServiceCentre {
 	@Column(name = "contact_person_role")
 	private String contactPersonRole;
 
-	@OneToMany(mappedBy = "bookService", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "serviceCentre", fetch = FetchType.LAZY)
 	private List<BookService> bookService;
 
 	public List<BookService> getBookService() {

@@ -14,8 +14,15 @@ public interface BookServiceRepository extends CrudRepository<BookService, Integ
 	void deleteById(int id);
 
 	List<BookService> findAll();
+
+	// BookService findBookServicebyId(int id);
+
+	List<BookService> findByUserId(int user_id);
+
+	List<BookService> findByServiceCentreServiceCentreId(int id);
+
+	List<BookService> findByVehicleRegNumber(String id);
+
+
 	
-//	BookService findBookServicebyId(int id);
-	
-	List<BookService> findByUserId(int id);
 }

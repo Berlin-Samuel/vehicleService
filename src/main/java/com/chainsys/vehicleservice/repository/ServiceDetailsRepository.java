@@ -15,4 +15,9 @@ public interface ServiceDetailsRepository extends CrudRepository<ServiceDetails,
 	void deleteById(ServiceDetailsCompositeKey id);
 
 	List<ServiceDetails> findAll();
+	
+	List<ServiceDetails> findByServiceDetailId(int id);
+	
+	List<ServiceDetails> findByBookingId(int id);
+	
 }
