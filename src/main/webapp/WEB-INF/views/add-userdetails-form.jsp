@@ -10,7 +10,8 @@
 </head>
 <body>
 <div id="root">
-		<div id="form">
+		<div id="form" align="center">
+		<h1>Create a new account</h1>
 			<form:form action="adduser" method="post" modelAttribute="adduserdetails">
 				<div>
 					<label for="userId">User Id</label>
@@ -49,7 +50,7 @@
 					</div>
 				</div>
 				<div>
-					<form:button>Add User Details</form:button>
+					<form:button>Sign Up</form:button>
 				</div>
 			</form:form>
 		</div>

@@ -13,14 +13,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.chainsys.vehicleservice.dto.BookServiceServiceDetailsDTO;
 import com.chainsys.vehicleservice.model.BookService;
 import com.chainsys.vehicleservice.service.ServiceOfBookService;
+import com.chainsys.vehicleservice.service.ServiceOfServiceCentre;
 
 @Controller
 @RequestMapping("/vehiclebookservice")
 public class BookServiceController {
 	@Autowired
 	private ServiceOfBookService bookServiceService;
+	@Autowired
+	private ServiceOfServiceCentre serviceOfServiceCentre;
 
-	
 	@GetMapping("/getbookservicebyid")
 	public String getBookServiceId(@RequestParam("id") int id, Model model) {
 		BookService bookService = bookServiceService.findBookServicebyId(id);
@@ -32,6 +34,7 @@ public class BookServiceController {
 	public String showServiceForm(Model model) {
 		BookService bookService = new BookService();
 		model.addAttribute("addbookservice", bookService);
+		model.addAttribute("centrelocation", serviceOfServiceCentre.getServiceCentre());
 		return "add-bookservice-form";
 	}
 
@@ -66,11 +69,12 @@ public class BookServiceController {
 		model.addAttribute("allbookservice", bookService);
 		return "list-bookservice";
 	}
+
 	@GetMapping("/getbookserviceservicedetails")
 	public String getBookServicesServicedetails(@RequestParam("user_id") int id, Model model) {
-		BookServiceServiceDetailsDTO dto=bookServiceService.getBookServiceServiceDetails(id);
-				model.addAttribute("getbookservice", dto.getBookService());
-				model.addAttribute("servicedetailslist", dto.getServiceDetails());
-				return "bookservice-servicedetails";
+		BookServiceServiceDetailsDTO dto = bookServiceService.getBookServiceServiceDetails(id);
+		model.addAttribute("getbookservice", dto.getBookService());
+		model.addAttribute("servicedetailslist", dto.getServiceDetails());
+		return "bookservice-servicedetails";
 	}
 }

@@ -18,13 +18,13 @@ import com.chainsys.vehicleservice.repository.VehicleTypeRepository;
 public class UserDetailsService {
 	@Autowired
 	private UserDetailsRepository userDetailsRepository;
-	
+
 	@Autowired
 	private VehicleTypeRepository vehicleTypeRepository;
-	
+
 	@Autowired
 	private BookServiceRepository bookServiceRepository;
-	
+
 	public List<UserDetails> getUserDetails() {
 		List<UserDetails> userDetails = userDetailsRepository.findAll();
 		return userDetails;
@@ -46,23 +46,26 @@ public class UserDetailsService {
 	public UserDetailsVehicleTypeDTO getUserDetailsVehicleType(int user_id) {
 		UserDetails userDetails = userDetailsRepository.findById(user_id);
 		UserDetailsVehicleTypeDTO dto = new UserDetailsVehicleTypeDTO();
-        dto.setUserDetails(userDetails);
-        List<VehicleType> vehicleTypeList = vehicleTypeRepository.findByUserId(user_id);
-        Iterator<VehicleType> iterator = vehicleTypeList.iterator();
-        while (iterator.hasNext())
-            dto.addVehicleType((VehicleType) iterator.next());
-        return dto;
-    }
-	
+		dto.setUserDetails(userDetails);
+		List<VehicleType> vehicleTypeList = vehicleTypeRepository.findByUserId(user_id);
+		Iterator<VehicleType> iterator = vehicleTypeList.iterator();
+		while (iterator.hasNext())
+			dto.addVehicleType((VehicleType) iterator.next());
+		return dto;
+	}
+
 	public UserDetailsBookServiceDTO getUserDetailsBookService(int user_id) {
 		UserDetails userDetails = userDetailsRepository.findById(user_id);
 		UserDetailsBookServiceDTO dto = new UserDetailsBookServiceDTO();
-        dto.setUserDetails(userDetails);
-        List<BookService> bookService = bookServiceRepository.findByUserId(user_id);
-            dto.setBookService(bookService);
-        return dto;
-    }
-	
-	
-	
+		dto.setUserDetails(userDetails);
+		List<BookService> bookService = bookServiceRepository.findByUserId(user_id);
+		dto.setBookService(bookService);
+		return dto;
+	}
+
+	public UserDetails getUserDetailsByNameAndPassword(String email, String password) {
+
+		return userDetailsRepository.findByUserEmailAndUserPassword(email, password);
+	}
+
 }

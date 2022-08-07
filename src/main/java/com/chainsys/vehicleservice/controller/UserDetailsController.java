@@ -37,7 +37,7 @@ public class UserDetailsController {
 	@PostMapping("/adduser")
 	public String addUserDetail(@ModelAttribute("adduserdetails") UserDetails userDetails) {
 		userDetailsService.addUserDetails(userDetails);
-		return "redirect:/vehicleuserdetails/userlist";
+		return "redirect:/vehiclebookservice/addbookservice";
 	}
 
 	@GetMapping("/updateuserdetails")
@@ -80,5 +80,24 @@ public class UserDetailsController {
 		model.addAttribute("getuserdetail", dto.getUserDetails());
 		model.addAttribute("bookservicedetails", dto.getBookService());
 		return "userdetails-bookservice";
+	}
+
+	@GetMapping("/userlogin")
+	public String loginUserDetailsform(Model model) {
+		UserDetails userDetails = new UserDetails();
+		model.addAttribute("user", userDetails);
+		return "user-login-form";
+	}
+
+	@PostMapping("/checkuserlogin")
+	public String checkingLoginAccess(@ModelAttribute("user") UserDetails userdetails) {
+		UserDetails userDetails = userDetailsService.getUserDetailsByNameAndPassword(userdetails.getUserEmail(),
+				userdetails.getUserPassword());
+		if (userDetails != null) {
+
+			return "redirect:/vehiclebookservice/addbookservice";
+		} else
+
+			return "userlogin";
 	}
 }

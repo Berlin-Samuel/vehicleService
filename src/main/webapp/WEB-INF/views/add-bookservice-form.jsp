@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-    <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
@@ -9,9 +9,10 @@
 <title>Add Book Service</title>
 </head>
 <body>
-<div id="root">
+	<div id="root">
 		<div id="form">
-			<form:form action="addservice" method="post" modelAttribute="addbookservice">
+			<form:form action="addservice" method="post"
+				modelAttribute="addbookservice">
 				<div>
 					<label for="bookingId">Booking Id</label>
 					<div>
@@ -19,10 +20,13 @@
 					</div>
 				</div>
 				<div>
-					<label for="serviceCentreId">Service Centre Id</label>
-					<div>
-						<form:input path="serviceCentreId" />
-					</div>
+					<label for="serviceCentreId">Service Centre Location</label>
+					<form:select path="serviceCentreId">
+						<c:forEach var="servicecentre" items="${centrelocation}">
+							<form:option value="${servicecentre.serviceCentreId}"
+								label="${servicecentre.centreLocation}" />
+						</c:forEach>
+					</form:select>
 				</div>
 				<div>
 					<label for="vehicleRegNumber">Vehicle Register Number</label>

@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
-import com.chainsys.vehicleservice.dto.UserDetailsVehicleTypeDTO;
 import com.chainsys.vehicleservice.dto.VehicleTypeBookServiceDTO;
 import com.chainsys.vehicleservice.model.VehicleType;
 import com.chainsys.vehicleservice.service.VehicleTypeService;
