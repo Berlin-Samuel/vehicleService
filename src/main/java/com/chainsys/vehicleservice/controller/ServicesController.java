@@ -1,7 +1,6 @@
 package com.chainsys.vehicleservice.controller;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,7 +10,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import com.chainsys.vehicleservice.dto.ServicesServiceDetailsDTO;
+import com.chainsys.vehicleservice.model.Payment;
 import com.chainsys.vehicleservice.model.Services;
+import com.chainsys.vehicleservice.service.PaymentService;
 import com.chainsys.vehicleservice.service.ServiceOfService;
 
 @Controller
@@ -19,7 +20,8 @@ import com.chainsys.vehicleservice.service.ServiceOfService;
 public class ServicesController {
 	@Autowired
 	private ServiceOfService serviceOfService;
-
+	@Autowired
+	private PaymentService paymentService;
 	@GetMapping("/getservicebyid")
 	public String getServiceId(@RequestParam("id") int id, Model model) {
 		Services services = serviceOfService.findServicebyId(id);
@@ -30,14 +32,18 @@ public class ServicesController {
 	@GetMapping("/addservices")
 	public String showServiceForm(Model model) {
 		Services services = new Services();
+		Payment payment=new Payment();
+		model.addAttribute("payment", payment);
 		model.addAttribute("serviceadd", services);
 		return "add-services-form";
 	}
 
 	@PostMapping("/addservice")
-	public String addService(@ModelAttribute("serviceadd") Services services) {
+	public String addService(@ModelAttribute("serviceadd") Services services,@ModelAttribute("payment")Payment payment,Model model) {
 		serviceOfService.addService(services);
-		return "redirect:/vehicleservice/servicelist";
+		System.out.println(payment.getBillAmount());
+//		paymentService.addPayment(payment);
+		return "redirect:/vehiclepayment/addpayment";
 	}
 
 	@GetMapping("/updateservice")

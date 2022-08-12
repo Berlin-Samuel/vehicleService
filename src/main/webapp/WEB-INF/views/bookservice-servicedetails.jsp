@@ -48,18 +48,6 @@
 						<form:input path="returnDate" readonly="true" />
 					</div>
 				</div>
-				<div>
-					<label for="serviceEstimateAmount">Service Estimate Amount</label>
-					<div>
-						<form:input path="serviceEstimateAmount" readonly="true" />
-					</div>
-				</div>
-				<div>
-					<label for="actualServiceAmount">Actual Service Amount</label>
-					<div>
-						<form:input path="actualServiceAmount" readonly="true" />
-					</div>
-				</div>
 				<div id="table root">
 					<table>
 						<thead>

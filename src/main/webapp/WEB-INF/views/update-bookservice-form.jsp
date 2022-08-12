@@ -49,18 +49,6 @@
 					</div>
 				</div>
 				<div>
-					<label for="serviceEstimateAmount">Service Estimate Amount</label>
-					<div>
-						<form:input path="serviceEstimateAmount" />
-					</div>
-				</div>
-				<div>
-					<label for="actualServiceAmount">Actual Service Amount</label>
-					<div>
-						<form:input path="actualServiceAmount" />
-					</div>
-				</div>
-				<div>
 					<form:button>Update Book Service</form:button>
 				</div>
 			</form:form>

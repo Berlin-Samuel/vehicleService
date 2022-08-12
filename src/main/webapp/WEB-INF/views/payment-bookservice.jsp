@@ -37,7 +37,7 @@
 					</div>
 				</div>
 				<div id="table root">
-		<table>
+		<table border='2' width='100' cellpadding='2'>
 			<thead>
 				<tr>
 					<th>Booking Id</th>
@@ -59,8 +59,6 @@
 						<td>${bookservicelist.userId}</td>
 						<td>${bookservicelist.serviceDate}</td>
 						<td>${bookservicelist.returnDate}</td>
-						<td>${bookservicelist.serviceEstimateAmount}</td>
-						<td>${bookservicelist.actualServiceAmount}</td>
 					</tr>
 			</tbody>
 		</table>

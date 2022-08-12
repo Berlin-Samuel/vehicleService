@@ -21,22 +21,24 @@ public class PaymentController {
 
 	@GetMapping("/getpaymentdetailbyid")
 	public String getPaymentId(@RequestParam("id") int id, Model model) {
-		Payment payment = paymentService.findPaymentbyId(id);
+		Payment payment = paymentService.getBookService(id);
 		model.addAttribute("payment", payment);
 		return "find-payment-form";
 	}
 
 	@GetMapping("/addpayment")
-	public String showPayment(Model model) {
+	public String showPayment(@RequestParam("id") int id,Model model) {
 		Payment payment = new Payment();
+		payment.setBookingId(id);
+		paymentService.addPayment(payment);
 		model.addAttribute("addpayment", payment);
-		return "add-payment-form";
+		return "find-payment-form";
 	}
 
 	@PostMapping("/addpayments")
 	public String addPayment(@ModelAttribute("addpayment") Payment payment) {
 		paymentService.addPayment(payment);
-		return "redirect:/vehiclepayment/paymentlist";
+		return "redirect:/vehicleuserdetails/userlogin";
 	}
 
 	@GetMapping("/updatepayment")

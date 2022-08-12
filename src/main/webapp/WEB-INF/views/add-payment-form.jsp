@@ -33,7 +33,7 @@
 				<div>
 					<label for="billDate">Bill Date</label>
 					<div>
-						<form:input path="billDate" />
+						<form:input path="billDate"  type="date" />
 					</div>
 				</div>
 				<div>

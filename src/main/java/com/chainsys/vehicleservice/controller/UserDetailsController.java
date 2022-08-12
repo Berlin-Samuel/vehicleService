@@ -1,9 +1,11 @@
 package com.chainsys.vehicleservice.controller;
 
 import java.util.List;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -33,11 +35,14 @@ public class UserDetailsController {
 		model.addAttribute("adduserdetails", userDetails);
 		return "add-userdetails-form";
 	}
-
+  
 	@PostMapping("/adduser")
-	public String addUserDetail(@ModelAttribute("adduserdetails") UserDetails userDetails) {
-		userDetailsService.addUserDetails(userDetails);
-		return "redirect:/vehiclebookservice/addbookservice";
+	public String addUserDetail(@Valid @ModelAttribute("adduserdetails") UserDetails userDetails, Errors errors) {
+		if (errors.hasErrors()) {
+			return "add-userdetails-form";
+		} else
+			userDetailsService.addUserDetails(userDetails);
+		return "redirect:/vehicleuserdetails/userlogin";
 	}
 
 	@GetMapping("/updateuserdetails")
@@ -90,14 +95,13 @@ public class UserDetailsController {
 	}
 
 	@PostMapping("/checkuserlogin")
-	public String checkingLoginAccess(@ModelAttribute("user") UserDetails userdetails) {
+	public String checkingLoginAccess(@ModelAttribute("user") UserDetails userdetails,Model model) {
 		UserDetails userDetails = userDetailsService.getUserDetailsByNameAndPassword(userdetails.getUserEmail(),
 				userdetails.getUserPassword());
 		if (userDetails != null) {
-
-			return "redirect:/vehiclebookservice/addbookservice";
-		} else
-
-			return "userlogin";
+			model.addAttribute("userId", userDetails.getUserId());
+			return "vehicletype";
+		} else 
+			return "redirect:/vehicleuserdetails/userlogin";
 	}
 }

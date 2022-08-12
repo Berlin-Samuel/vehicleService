@@ -31,4 +31,7 @@ public class ServiceOfServiceDetails {
 		Optional<ServiceDetails> serviceDetails = serviceDetailsRepository.findById(id);
 		return serviceDetails;
 	}
+	public List<ServiceDetails> getServiceDetailsByBookingId(int id){
+		return serviceDetailsRepository.findByBookingId(id);
+	}
 }

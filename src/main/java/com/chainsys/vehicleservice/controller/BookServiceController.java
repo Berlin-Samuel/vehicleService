@@ -12,8 +12,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import com.chainsys.vehicleservice.dto.BookServiceServiceDetailsDTO;
 import com.chainsys.vehicleservice.model.BookService;
+import com.chainsys.vehicleservice.model.VehicleType;
 import com.chainsys.vehicleservice.service.ServiceOfBookService;
 import com.chainsys.vehicleservice.service.ServiceOfServiceCentre;
+import com.chainsys.vehicleservice.service.VehicleTypeService;
 
 @Controller
 @RequestMapping("/vehiclebookservice")
@@ -22,7 +24,9 @@ public class BookServiceController {
 	private ServiceOfBookService bookServiceService;
 	@Autowired
 	private ServiceOfServiceCentre serviceOfServiceCentre;
-
+	@Autowired
+	private VehicleTypeService vehicleTypeService;
+	
 	@GetMapping("/getbookservicebyid")
 	public String getBookServiceId(@RequestParam("id") int id, Model model) {
 		BookService bookService = bookServiceService.findBookServicebyId(id);
@@ -31,17 +35,21 @@ public class BookServiceController {
 	}
 
 	@GetMapping("/addbookservice")
-	public String showServiceForm(Model model) {
+	public String showServiceForm(@RequestParam("userId")int id,Model model) {
 		BookService bookService = new BookService();
+		List<VehicleType> vehicleTypeList=vehicleTypeService.getVehicleTypeByUserid(id);
+		model.addAttribute("vehicleTypeList", vehicleTypeList);
+		bookService.setUserId(id);
 		model.addAttribute("addbookservice", bookService);
 		model.addAttribute("centrelocation", serviceOfServiceCentre.getServiceCentre());
 		return "add-bookservice-form";
 	}
 
 	@PostMapping("/addservice")
-	public String addBookService(@ModelAttribute("addbookservice") BookService bookService) {
+	public String addBookService(@ModelAttribute("addbookservice") BookService bookService,Model model) {
 		bookServiceService.addBookService(bookService);
-		return "redirect:/vehiclebookservice/bookservicelist";
+		model.addAttribute("bookId", bookService.getBookingId());
+		return "add-bookservice-form";
 	}
 
 	@GetMapping("/updatebookservice")

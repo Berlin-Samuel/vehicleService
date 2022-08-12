@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-    <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
@@ -9,15 +9,10 @@
 <title>Add Service</title>
 </head>
 <body>
-<div id="root">
+	<div id="root">
 		<div id="form">
-			<form:form action="addservice" method="post" modelAttribute="serviceadd">
-				<div>
-					<label for="serviceDetailId">Service Detail Id</label>
-					<div>
-						<form:input path="serviceDetailId" />
-					</div>
-				</div>
+			<form:form action="addservice" method="post"
+				modelAttribute="serviceadd">
 				<div>
 					<label for="serviceType">Service Type</label>
 					<div>
@@ -35,7 +30,7 @@
 					<div>
 						<form:input path="serviceDescription" />
 					</div>
-				</div>				
+				</div>
 				<div>
 					<form:button>Add Service</form:button>
 				</div>

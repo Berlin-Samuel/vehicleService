@@ -1,6 +1,6 @@
 package com.chainsys.vehicleservice.model;
 
-import java.util.Date;
+import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,9 +9,11 @@ import javax.persistence.Id;
 import javax.persistence.IdClass;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 @Entity
 @IdClass(ServiceDetailsCompositeKey.class)
+@Table(name="service_details")
 public class ServiceDetails {
 	@Id
 	@Column(name = "service_detail_id")

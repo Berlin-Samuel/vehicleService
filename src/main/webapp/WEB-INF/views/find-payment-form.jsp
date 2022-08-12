@@ -11,7 +11,7 @@
 <body>
 <div id="root">
 		<div id="form">
-			<form:form action="" method="post" modelAttribute="payment">
+			<form:form action="" method="post" modelAttribute="addpayment">
 				<div>
 					<label for="billNumber">Bill Number</label>
 					<div>

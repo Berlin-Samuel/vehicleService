@@ -13,7 +13,7 @@
 		<div id="form" align="center">
 			<form:form action="checkuserlogin" method="post"
 				modelAttribute="user">
-				<h1 align="center">User Login</h1>
+				<h1 align="center">Login</h1>
 
 				<table>
 					<tr>
@@ -30,9 +30,7 @@
 				<div>
 					<table>
 						<tr>
-							<td><form:button>
-									<a href="/vehiclebookservice/addbookservice">Sign in</a>
-								</form:button></td>
+							<td><form:button>Sign in</form:button></td>
 							<td><form:button>
 									<a href="/vehicleuserdetails/adduserdetails">Sign up</a>
 								</form:button></td>

@@ -53,7 +53,7 @@
 		</div>
 	</div>
 	<div id="table root">
-		<table>
+		<table border='2' width='100' cellpadding='2'>
 			<thead>
 				<tr>
 					<th>Vehicle Register Number</th>
@@ -86,6 +86,5 @@
 			</tbody>
 		</table>
 	</div>
-	
 </body>
 </html>

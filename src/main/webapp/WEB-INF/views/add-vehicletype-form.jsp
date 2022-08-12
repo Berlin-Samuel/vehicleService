@@ -39,25 +39,25 @@
 				<div>
 					<label for="vehicleDatePurchase">Vehicle Date Purchase</label>
 					<div>
-						<form:input path="vehicleDatePurchase" />
+						<form:input path="vehicleDatePurchase" type="date"/>
 					</div>
 				</div>
 				<div>
 					<label for="vehicleFcDate">Vehicle Fc Date</label>
 					<div>
-						<form:input path="vehicleFcDate" />
+						<form:input path="vehicleFcDate" type="date" />
 					</div>
 				</div>
 				<div>
 					<label for="insuranceFrom">Insurance From</label>
 					<div>
-						<form:input path="insuranceFrom" />
+						<form:input path="insuranceFrom" type="date" />
 					</div>
 				</div>
 				<div>
 					<label for="insuranceTo">Insurance To</label>
 					<div>
-						<form:input path="insuranceTo" />
+						<form:input path="insuranceTo" type="date" />
 					</div>
 				</div><div>
 					<label for="insuranceCompanyName">Insurance Company Name</label>

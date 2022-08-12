@@ -1,19 +1,26 @@
 package com.chainsys.vehicleservice.model;
 
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="book_service")
 public class BookService {
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "booking_id_ref")
+	@SequenceGenerator(name = "booking_id_ref", sequenceName = "booking_id_ref", allocationSize = 1)
 	@Column(name = "booking_id")
 	private int bookingId;
 	@Column(name = "service_centre_id")
@@ -26,10 +33,6 @@ public class BookService {
 	private Date serviceDate;
 	@Column(name = "return_date")
 	private Date returnDate;
-	@Column(name = "service_estimate_amount")
-	private int serviceEstimateAmount;
-	@Column(name = "actual_service_amount")
-	private int actualServiceAmount;
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "user_id", insertable = false, updatable = false, nullable = false)
@@ -54,7 +57,7 @@ public class BookService {
 	@OneToMany(mappedBy = "bookService", fetch = FetchType.LAZY)
 	private List<ServiceDetails> serviceDetails;
 
-	@OneToOne(mappedBy = "bookService",fetch = FetchType.LAZY)
+	@OneToOne(mappedBy = "bookService", fetch = FetchType.LAZY)
 	private Payment payment;
 
 	public Payment getPayment() {
@@ -143,22 +146,6 @@ public class BookService {
 
 	public void setReturnDate(Date returnDate) {
 		this.returnDate = returnDate;
-	}
-
-	public int getServiceEstimateAmount() {
-		return serviceEstimateAmount;
-	}
-
-	public void setServiceEstimateAmount(int serviceEstimateAmount) {
-		this.serviceEstimateAmount = serviceEstimateAmount;
-	}
-
-	public int getActualServiceAmount() {
-		return actualServiceAmount;
-	}
-
-	public void setActualServiceAmount(int actualServiceAmount) {
-		this.actualServiceAmount = actualServiceAmount;
 	}
 
 }

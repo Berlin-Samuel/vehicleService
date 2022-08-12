@@ -9,8 +9,30 @@
 <title>List Service Detail</title>
 </head>
 <body>
+<div id="table root">
+		<table border='2' width='1000' cellpadding='2'>
+			<thead>
+				<tr>
+					<th>Service Type</th>
+					<th>Service Charge</th>
+					<th>Service Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach var="Services" items="${allservice}">
+					<tr>
+						<td>${Services.serviceType}</td>
+						<td>${Services.serviceCharge}</td>
+						<td>${Services.serviceDescription}</td>
+						<td><a href="/vehicleservicedetails/serviceDetailsAdd?id=${Services.serviceDetailId}&bookId=${bookId}"><button>Add Service</button></a></td>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
+	</div>
+	<div><a href="/vehiclepayment/addpayment?id=${bookId}"><button>payment</button></a></div>
 	<div id="table root">
-		<table>
+		<table border='2' width=1000' cellpadding='2'>
 			<thead>
 				<tr>
 					<th>Service Detail Id</th>

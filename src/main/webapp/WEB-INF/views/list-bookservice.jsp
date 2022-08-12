@@ -10,7 +10,7 @@
 </head>
 <body>
 	<div id="table root">
-		<table>
+		<table border='2' width='100' cellpadding='2'>
 			<thead>
 				<tr>
 					<th>Booking Id</th>
@@ -19,8 +19,6 @@
 					<th>User Id</th>
 					<th>Service Date</th>
 					<th>Return Date</th>
-					<th>Service Estimate Amount</th>
-					<th>Actual Service Amount</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -32,8 +30,6 @@
 						<td>${BookService.userId}</td>
 						<td>${BookService.serviceDate}</td>
 						<td>${BookService.returnDate}</td>
-						<td>${BookService.serviceEstimateAmount}</td>
-						<td>${BookService.actualServiceAmount}</td>
 					</tr>
 				</c:forEach>
 			</tbody>

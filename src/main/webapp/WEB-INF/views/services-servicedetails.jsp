@@ -40,7 +40,7 @@
 		</div>
 	</div>
 	<div id="table root">
-		<table>
+		<table border='2' width='100' cellpadding='2'>
 			<thead>
 				<tr>
 					<th>Service Detail Id</th>

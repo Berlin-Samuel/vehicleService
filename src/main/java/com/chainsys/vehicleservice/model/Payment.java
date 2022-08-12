@@ -1,17 +1,23 @@
 package com.chainsys.vehicleservice.model;
 
-import java.util.Date;
-
+import java.sql.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="payment")
 public class Payment {
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "bill_number_ref")
+	@SequenceGenerator(name = "bill_number_ref", sequenceName = "bill_number_ref", allocationSize = 1)
 	@Column(name = "bill_number")
 	private int billNumber;
 	@Column(name = "booking_id")

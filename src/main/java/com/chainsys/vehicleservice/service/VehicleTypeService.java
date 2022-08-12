@@ -34,7 +34,9 @@ public class VehicleTypeService {
 		Optional<VehicleType> vehicleType = vehicleTypeRepository.findById(id);
 		return vehicleType;
 	}
-
+	public List<VehicleType> getVehicleTypeByUserid(int userId){
+		return vehicleTypeRepository.findByUserId(userId);
+	}
 	public VehicleTypeBookServiceDTO getVehicleTypeBookService(String user_id) {
 		Optional<VehicleType> vehicleType = vehicleTypeRepository.findById(user_id);
 		VehicleTypeBookServiceDTO dto = new VehicleTypeBookServiceDTO();

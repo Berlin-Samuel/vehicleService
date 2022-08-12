@@ -28,16 +28,18 @@ public class VehicleTypeController {
 	}
 
 	@GetMapping("/addvehicletype")
-	public String showVehicleType(Model model) {
+	public String showVehicleType(@RequestParam("userId")int id,Model model) {
 		VehicleType vehicleType = new VehicleType();
 		model.addAttribute("addvehicletype", vehicleType);
+		vehicleType.setUserId(id);
 		return "add-vehicletype-form";
 	}
 
 	@PostMapping("/addvehicle")
-	public String addVehicleType(@ModelAttribute("addvehicletype") VehicleType vehicleType) {
+	public String addVehicleType(@ModelAttribute("addvehicletype") VehicleType vehicleType,Model model) {
 		vehicleTypeService.addVehicleType(vehicleType);
-		return "redirect:/vehicletype/vehicletypelist";
+		model.addAttribute("userId", vehicleType.getUserId());
+		return "vehicletype";
 	}
 
 	@GetMapping("/updatevehicletype")

@@ -33,7 +33,7 @@
 				<div>
 					<label for="serviceDate">Service Date</label>
 					<div>
-						<form:input path="serviceDate" />
+						<form:input path="serviceDate" type="date" />
 					</div>
 				</div>
 				<div>

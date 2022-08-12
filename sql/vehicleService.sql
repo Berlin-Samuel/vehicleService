@@ -82,3 +82,4 @@ bill_date date not null);
 
 desc payment;
 drop table payment;
+
