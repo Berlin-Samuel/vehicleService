@@ -49,7 +49,8 @@ public class BookServiceController {
 	public String addBookService(@ModelAttribute("addbookservice") BookService bookService,Model model) {
 		bookServiceService.addBookService(bookService);
 		model.addAttribute("bookId", bookService.getBookingId());
-		return "add-bookservice-form";
+		int bookId=bookService.getBookingId();
+		return "redirect:/vehicleservicedetails/servicedetailslist?id="+bookId;
 	}
 
 	@GetMapping("/updatebookservice")

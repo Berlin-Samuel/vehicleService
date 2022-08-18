@@ -3,14 +3,18 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>List Service Detail</title>
+<style type="text/css">
+<%@include file="/WEB-INF/css/listservice.css"%>
+</style>
 </head>
 <body>
-<div id="table root">
-		<table border='2' width='1000' cellpadding='2'>
+	<div>
+		<table>
+			<caption></caption>
 			<thead>
 				<tr>
 					<th>Service Type</th>
@@ -24,19 +28,19 @@
 						<td>${Services.serviceType}</td>
 						<td>${Services.serviceCharge}</td>
 						<td>${Services.serviceDescription}</td>
-						<td><a href="/vehicleservicedetails/serviceDetailsAdd?id=${Services.serviceDetailId}&bookId=${bookId}"><button>Add Service</button></a></td>
+						<td><a
+							href="/vehicleservicedetails/serviceDetailsAdd?id=${Services.serviceDetailId}&bookId=${bookId}">
+							<button class="button" type="submit" name="submit">Add Service</button></a></td>
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
 	</div>
-	<div><a href="/vehiclepayment/addpayment?id=${bookId}"><button>payment</button></a></div>
-	<div id="table root">
-		<table border='2' width=1000' cellpadding='2'>
+	<div>
+		<table>
+			<caption></caption>
 			<thead>
 				<tr>
-					<th>Service Detail Id</th>
-					<th>Booking Id</th>
 					<th>Service Charges</th>
 					<th>Service Date</th>
 				</tr>
@@ -44,14 +48,16 @@
 			<tbody>
 				<c:forEach var="ServiceDetails" items="${allservicedetails}">
 					<tr>
-						<td>${ServiceDetails.serviceDetailId}</td>
-						<td>${ServiceDetails.bookingId}</td>
 						<td>${ServiceDetails.serviceCharges}</td>
 						<td>${ServiceDetails.serviceDate}</td>
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
+	</div>
+	<div>
+		<a href="/vehiclepayment/addpayment?id=${bookId}">
+		<button class="button" type="submit" name="submit">Payment</button></a>
 	</div>
 </body>
 </html>

@@ -38,7 +38,7 @@ public class PaymentController {
 	@PostMapping("/addpayments")
 	public String addPayment(@ModelAttribute("addpayment") Payment payment) {
 		paymentService.addPayment(payment);
-		return "redirect:/vehicleuserdetails/userlogin";
+		return "redirect:/vehiclepayment/paymentlist";
 	}
 
 	@GetMapping("/updatepayment")

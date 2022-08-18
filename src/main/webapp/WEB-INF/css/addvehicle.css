@@ -1,0 +1,75 @@
+@charset "ISO-8859-1";
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-image:
+		url(https://www.teahub.io/photos/full/48-482371_best-hd-wallpaper-car-and-bike.jpg);
+	background-size: 1366px 768px;
+	font-family: "Times New Roman", Times, serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+}
+
+h1 {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 35px;
+	color: white;
+	text-align: center;
+}
+
+.button {
+	text-align: center;
+	margin-top: 5px;
+	margin-left: 20%;
+	width: 65%;
+	background: #face69;
+	color: black;
+	padding: 5px 0;
+	font-size: 18px;
+	font-weight: 600;
+	border-radius: 5px;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.form-control-vehicletype {
+	margin-bottom: 10px;
+	padding-bottom: 5px;
+	position: relative;
+}
+
+.form-control-vehicletype label {
+	font-size: 25px;
+	font-weight: 800;
+	color: white;
+	display: inline-block;
+	margin-bottom: 5px;
+}
+
+.form-control-vehicletype input {
+	border: 2px solid #fefefe;
+	border-radius: 4px;
+	font-size: 20px;
+	display: block;
+	padding: 10px;
+	width: 100%;
+}
+
+.form-control-vehicletype input:focus {
+	outline: none;
+	border-color: #777;
+}
+
+.back {
+	position: absolute;
+	top: 10;
+	left: 10;
+	padding: 5px 8px;
+	background-color: #ffffff;
+	color: #080710;
+}

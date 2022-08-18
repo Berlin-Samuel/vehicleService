@@ -10,6 +10,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Past;
 
 @Entity
 @Table(name="vehicle_type")
@@ -25,14 +26,8 @@ public class VehicleType {
 	private String vehicleModel;
 	@Column(name = "vehicle_date_purchase")
 	private Date vehicleDatePurchase;
-	@Column(name = "vehicle_fc_date")
-	private Date vehicleFcDate;
-	@Column(name = "insurance_from")
-	private Date insuranceFrom;
 	@Column(name = "insurance_to")
 	private Date insuranceTo;
-	@Column(name = "insurance_company_name")
-	private String insuranceCompanyName;
 	@Column(name = "user_id")
 	private int userId;
 
@@ -99,36 +94,12 @@ public class VehicleType {
 		this.vehicleDatePurchase = vehicleDatePurchase;
 	}
 
-	public Date getVehicleFcDate() {
-		return vehicleFcDate;
-	}
-
-	public void setVehicleFcDate(Date vehicleFcDate) {
-		this.vehicleFcDate = vehicleFcDate;
-	}
-
-	public Date getInsuranceFrom() {
-		return insuranceFrom;
-	}
-
-	public void setInsuranceFrom(Date insuranceFrom) {
-		this.insuranceFrom = insuranceFrom;
-	}
-
 	public Date getInsuranceTo() {
 		return insuranceTo;
 	}
 
 	public void setInsuranceTo(Date insuranceTo) {
 		this.insuranceTo = insuranceTo;
-	}
-
-	public String getInsuranceCompanyName() {
-		return insuranceCompanyName;
-	}
-
-	public void setInsuranceCompanyName(String insuranceCompanyName) {
-		this.insuranceCompanyName = insuranceCompanyName;
 	}
 
 	public int getUserId() {

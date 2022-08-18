@@ -1,0 +1,76 @@
+@charset "ISO-8859-1";
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-image:
+		url(https://as2.ftcdn.net/v2/jpg/04/05/48/29/1000_F_405482970_sedpuWKwHwQs1JVJMh2PYgUDjD43JnZ2.jpg);
+	background-size: 1366px 768px;
+	font-family: "Times New Roman", Times, serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	margin: 0;
+}
+
+h1 {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 25px;
+	color: rgb(0, 0, 0);
+	text-align: center;
+}
+
+.button {
+	text-align: center;
+	margin-top: 5px;
+	margin-left: 20%;
+	width: 65%;
+	background: #face69;
+	color: black;
+	padding: 5px 0;
+	font-size: 18px;
+	font-weight: 600;
+	border-radius: 5px;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.form-control-userdetails {
+	margin-bottom: 10px;
+	padding-bottom: 5px;
+	position: relative;
+}
+
+.form-control-userdetails label {
+	font-size: 25px;
+	font-weight: 800;
+	color: rgb(0, 0, 0);
+	display: inline-block;
+	margin-bottom: 5px;
+}
+
+.form-control-userdetails input {
+	border: 2px solid #fefefe;
+	border-radius: 4px;
+	font-size: 20px;
+	display: block;
+	padding: 10px;
+	width: 100%;
+}
+
+.form-control-userdetails input:focus {
+	outline: none;
+	border-color: #777;
+}
+
+.back {
+	position: absolute;
+	top: 10;
+	left: 10;
+	padding: 5px 8px;
+	background-color: #ffffff;
+	color: #080710;
+}

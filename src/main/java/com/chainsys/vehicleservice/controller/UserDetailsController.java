@@ -35,7 +35,7 @@ public class UserDetailsController {
 		model.addAttribute("adduserdetails", userDetails);
 		return "add-userdetails-form";
 	}
-  
+
 	@PostMapping("/adduser")
 	public String addUserDetail(@Valid @ModelAttribute("adduserdetails") UserDetails userDetails, Errors errors) {
 		if (errors.hasErrors()) {
@@ -95,13 +95,13 @@ public class UserDetailsController {
 	}
 
 	@PostMapping("/checkuserlogin")
-	public String checkingLoginAccess(@ModelAttribute("user") UserDetails userdetails,Model model) {
+	public String checkingLoginAccess(@ModelAttribute("user") UserDetails userdetails, Model model) {
 		UserDetails userDetails = userDetailsService.getUserDetailsByNameAndPassword(userdetails.getUserEmail(),
 				userdetails.getUserPassword());
 		if (userDetails != null) {
 			model.addAttribute("userId", userDetails.getUserId());
 			return "vehicletype";
-		} else 
+		} else
 			return "redirect:/vehicleuserdetails/userlogin";
 	}
 }

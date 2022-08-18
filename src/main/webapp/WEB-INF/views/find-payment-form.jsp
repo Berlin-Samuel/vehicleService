@@ -3,41 +3,35 @@
     <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Find Payment</title>
+<style type="text/css">
+<%@include file="/WEB-INF/css/payment.css"%>
+</style>
 </head>
 <body>
-<div id="root">
-		<div id="form">
+		<div class="form-payment">
+		<h1>Your Service Bill</h1>
 			<form:form action="" method="post" modelAttribute="addpayment">
-				<div>
+				<div class="form-control-payment">
 					<label for="billNumber">Bill Number</label>
-					<div>
 						<form:input path="billNumber" readonly="true"/>
-					</div>
 				</div>
-				<div>
+				<%-- <div class="form-control-payment">
 					<label for="bookingId">Booking Id</label>
-					<div>
 						<form:input path="bookingId" readonly="true"/>
-					</div>
-				</div>
-				<div>
+					</div> --%>
+				<div class="form-control-payment">
 					<label for="billAmount">Bill Amount</label>
-					<div>
 						<form:input path="billAmount" readonly="true"/>
-					</div>
 				</div>
-				<div>
+				<div class="form-control-payment">
 					<label for="billDate">Bill Date</label>
-					<div>
 						<form:input path="billDate" readonly="true"/>
 					</div>
-				</div>
 			</form:form>
 		</div>
-	</div>
 </body>
 </html>

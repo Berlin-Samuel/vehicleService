@@ -1,0 +1,61 @@
+@charset "ISO-8859-1";
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-image:
+		url(https://previews.123rf.com/images/279photo/279photo1612/279photo161205273/68221977-payment-terminal-with-card-on-white-background-top-view-.jpg);
+	background-size: 1366px 768px;
+	font-family: "Times New Roman", Times, serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	margin: 0;
+}
+
+h1 {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 50px;
+	color: rgb(0, 0, 0);
+	text-align: center;
+}
+
+.form-control-payment {
+	margin-bottom: 10px;
+	padding-bottom: 5px;
+	position: relative;
+}
+
+.form-control-payment label {
+	font-size: 25px;
+	font-weight: 800;
+	color: rgb(0, 0, 0);
+	display: inline-block;
+	margin-bottom: 5px;
+}
+
+.form-control-payment input {
+	border: 2px solid #fefefe;
+	border-radius: 4px;
+	font-size: 20px;
+	display: block;
+	padding: 10px;
+	width: 100%;
+}
+
+.form-control-payment input:focus {
+	outline: none;
+	border-color: #777;
+}
+
+.back {
+	position: absolute;
+	top: 10;
+	left: 10;
+	padding: 5px 8px;
+	background-color: #ffffff;
+	color: #080710;
+}
