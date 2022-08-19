@@ -102,6 +102,6 @@ public class UserDetailsController {
 			model.addAttribute("userId", userDetails.getUserId());
 			return "vehicletype";
 		} else
-			return "redirect:/vehicleuserdetails/userlogin";
+			return "invalid-userlogin-error";
 	}
 }

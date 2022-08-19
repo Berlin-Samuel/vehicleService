@@ -10,24 +10,30 @@ import com.chainsys.vehicleservice.model.ServiceDetails;
 
 public class Logic {
 	public static Date getInstanceDate() {
-        Calendar vcalendar=Calendar.getInstance();
-        String dates =  vcalendar.get(Calendar.DATE) + "/" + (vcalendar.get(Calendar.MONTH)+1) + "/" + vcalendar.get(Calendar.YEAR);
-        SimpleDateFormat dateFormat=new SimpleDateFormat("dd/MM/yyyy");
-        Date date=null;
-        try {
-            date=new java.sql.Date(dateFormat.parse(dates).getTime());
+		Calendar vcalendar = Calendar.getInstance();
+		String dates = vcalendar.get(Calendar.DATE) + "/" + (vcalendar.get(Calendar.MONTH) + 1) + "/"
+				+ vcalendar.get(Calendar.YEAR);
+		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+		Date date = null;
+		try {
+			date = new java.sql.Date(dateFormat.parse(dates).getTime());
 //            date=dateFormat.parse(dates);
-            System.out.println(date);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        return date;
-    }
+			System.out.println(date);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		return date;
+	}
+
 	public static int getTotalServiceAmount(List<ServiceDetails> serviceDetails) {
-		int totalAmount=0;
-		for(int i=0;i<serviceDetails.size();i++) {
-			totalAmount+=serviceDetails.get(i).getServiceCharges();
+		int totalAmount = 0;
+		for (int i = 0; i < serviceDetails.size(); i++) {
+			totalAmount += serviceDetails.get(i).getServiceCharges();
 		}
 		return totalAmount;
+	}
+
+	private Logic() {
+
 	}
 }

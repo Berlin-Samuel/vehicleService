@@ -5,14 +5,19 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="service_centre")
 public class ServiceCentre {
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "service_centre_id_ref")
+	@SequenceGenerator(name = "service_centre_id_ref", sequenceName = "service_centre_id_ref", allocationSize = 1)
 	@Column(name = "service_centre_id")
 	private int serviceCentreId;
 	@Column(name = "centre_location")

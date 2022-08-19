@@ -16,7 +16,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="book_service")
+@Table(name = "book_service")
 public class BookService {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO, generator = "booking_id_ref")
@@ -31,8 +31,6 @@ public class BookService {
 	private int userId;
 	@Column(name = "service_date")
 	private Date serviceDate;
-	@Column(name = "return_date")
-	private Date returnDate;
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "user_id", insertable = false, updatable = false, nullable = false)
@@ -138,14 +136,6 @@ public class BookService {
 
 	public void setServiceDate(Date serviceDate) {
 		this.serviceDate = serviceDate;
-	}
-
-	public Date getReturnDate() {
-		return returnDate;
-	}
-
-	public void setReturnDate(Date returnDate) {
-		this.returnDate = returnDate;
 	}
 
 }

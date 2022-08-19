@@ -13,12 +13,6 @@
 		<div id="form">
 			<form:form action="addcentre" method="post" modelAttribute="addservicecentre">
 				<div>
-					<label for="serviceCentreId">Service Centre Id</label>
-					<div>
-						<form:input path="serviceCentreId" />
-					</div>
-				</div>
-				<div>
 					<label for="centreLocation">Centre Location</label>
 					<div>
 						<form:input path="centreLocation" />

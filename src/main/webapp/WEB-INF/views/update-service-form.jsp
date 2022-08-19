@@ -3,7 +3,7 @@
     <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Update Service</title>
@@ -13,9 +13,9 @@
 		<div id="form">
 			<form:form action="updateservices" method="post" modelAttribute="updateservice">
 				<div>
-					<label for="serviceDetailId">Service Detail Id</label>
+					<label for="serviceDetailId"></label>
 					<div>
-						<form:input path="serviceDetailId" />
+						<form:input path="serviceDetailId" type="hidden"/>
 					</div>
 				</div>
 				<div>

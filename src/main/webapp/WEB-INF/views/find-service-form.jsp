@@ -13,12 +13,6 @@
 		<div id="form">
 			<form:form action="" method="post" modelAttribute="vehicleservice">
 				<div>
-					<label for="serviceDetailId">Service Detail Id</label>
-					<div>
-						<form:input path="serviceDetailId" readonly="true" />
-					</div>
-				</div>
-				<div>
 					<label for="serviceType">Service Type</label>
 					<div>
 						<form:input path="serviceType" readonly="true" />

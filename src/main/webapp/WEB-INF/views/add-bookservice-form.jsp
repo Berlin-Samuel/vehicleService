@@ -42,12 +42,6 @@
 					<label for="serviceDate">Service Date</label>
 						<form:input path="serviceDate" type="date" />
 				</div>
-				<div class="form-control-bookservice">
-					<label for="returnDate">Return Date</label>
-					<div>
-						<form:input path="returnDate" type="date" />
-					</div>
-				</div>
 				<div>
 					<form:button class="button" type="submit" name="submit">Add Book Service</form:button>
 				</div>

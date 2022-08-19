@@ -16,11 +16,6 @@
 			<h1>Create a New Account</h1>
 			<form:form action="adduser" method="post"
 				modelAttribute="adduserdetails" name="form">
-				<div>
-					<label for="userId">User Id</label>
-					<form:input path="userId" />
-				</div>
-				<form:errors path="userId" cssClass="text-danger" />
 				<div class="form-control-userdetails">
 					<label for="userName">Name</label>
 					<form:input path="userName"  name="userName" placeholder="Enter Your Full Name" required="true" onblur="userNameCheck();"/>

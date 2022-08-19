@@ -1,0 +1,50 @@
+@charset "ISO-8859-1";
+
+.text-danger {
+	color: #e80c4d;
+	font-size: 0.9em;
+}
+
+body {
+	background-image:
+		url("https://img.freepik.com/free-vector/cute-pets-illustration_53876-112522.jpg?w=2000");
+	background-size: 1366px 768px;
+	background-attachment: fixed;
+	font-family: cursive;
+}
+
+.index {
+	text-align: center;
+}
+
+table {
+	border-spacing: 1;
+	border-collapse: collapse;
+	background: white;
+	border-radius: 6px;
+	overflow: hidden;
+	max-width: 1000px;
+	width: 100%;
+	margin: 0 auto;
+	position: relative;
+	font-size: 15px;
+	padding: 15px;
+}
+
+th {
+	background-color: #04AA6D;
+	color: white;
+}
+
+button {
+	font-size: 30px;
+	width: 25%;
+}
+
+.logout {
+	font-size: 10px;
+	width: 5%;
+	position: absolute;
+	top: 5%;
+	left: 5%;
+}
