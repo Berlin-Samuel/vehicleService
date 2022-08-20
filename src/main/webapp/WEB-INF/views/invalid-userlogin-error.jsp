@@ -7,13 +7,18 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Error</title>
+<style type="text/css">
+h2 {
+	text-align: center;
+}
+</style>
 </head>
 <body>
 	<div>
-		<h2 align="center">Invalid Email and Password</h2>
+		<h2 >Invalid Email and Password</h2>
 	</div>
 	<div>
-		<h2 align="center">Check Your Email and Password</h2>
+		<h2>Check Your Email and Password</h2>
 	</div>
 	<a href="/vehicleuserdetails/userlogin"> Return to User login
 		page</a>

@@ -17,8 +17,7 @@ public class ServiceOfService {
 	private ServiceDetailsRepository serviceDetailsRepository;
 
 	public List<Services> getService() {
-		List<Services> services = serviceRepository.findAll();
-		return services;
+		return serviceRepository.findAll();
 	}
 
 	public void deleteServicebyId(int id) {
@@ -30,8 +29,7 @@ public class ServiceOfService {
 	}
 
 	public Services findServicebyId(int id) {
-		Services services = serviceRepository.findById(id);
-		return services;
+		return serviceRepository.findById(id);
 	}
 
 	public ServicesServiceDetailsDTO getServicesServiceDetails(int user_id) {

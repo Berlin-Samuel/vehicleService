@@ -18,8 +18,7 @@ public class VehicleTypeService {
 	private BookServiceRepository bookServiceRepository;
 
 	public List<VehiclesType> getVehicleType() {
-		List<VehiclesType> vehicleType = vehicleTypeRepository.findAll();
-		return vehicleType;
+		return vehicleTypeRepository.findAll();
 	}
 
 	public void deleteVehicleTypebyId(String id) {
@@ -31,8 +30,7 @@ public class VehicleTypeService {
 	}
 
 	public Optional<VehiclesType> findVehicleTypebyId(String id) {
-		Optional<VehiclesType> vehicleType = vehicleTypeRepository.findById(id);
-		return vehicleType;
+		return vehicleTypeRepository.findById(id);
 	}
 	public List<VehiclesType> getVehicleTypeByUserid(int userId){
 		return vehicleTypeRepository.findByUserId(userId);

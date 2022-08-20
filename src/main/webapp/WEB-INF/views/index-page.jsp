@@ -5,9 +5,14 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Index Page</title>
+<style type="text/css">
+h1{
+text-align:center;
+}
+</style>
 </head>
 <body>
-<h1 align="center">INDEX</h1>
+<h1>INDEX</h1>
 <h1>User Details Crud</h1>
 <a href="/vehicleuserdetails/adduserdetails">Add User Details</a><br>
 <a href="/vehicleuserdetails/userlist">View All User Details</a><br>
