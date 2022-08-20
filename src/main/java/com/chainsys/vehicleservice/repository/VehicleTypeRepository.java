@@ -5,17 +5,17 @@ import java.util.Optional;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.chainsys.vehicleservice.model.VehicleType;
+import com.chainsys.vehicleservice.model.VehiclesType;
 
-public interface VehicleTypeRepository extends CrudRepository<VehicleType, String> {
+public interface VehicleTypeRepository extends CrudRepository<VehiclesType, String> {
 
-	Optional<VehicleType> findById(String id);
+	Optional<VehiclesType> findById(String id);
 
-	VehicleType save(VehicleType vehicleType);
+	VehiclesType save(VehiclesType vehicleType);
 
 	void deleteById(String string);
 
-	List<VehicleType> findAll();
+	List<VehiclesType> findAll();
 	
-	List<VehicleType> findByUserId(int user_id);
+	List<VehiclesType> findByUserId(int user_id);
 }

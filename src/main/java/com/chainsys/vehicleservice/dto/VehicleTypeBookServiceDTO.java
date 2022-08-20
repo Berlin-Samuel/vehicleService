@@ -4,17 +4,17 @@ import java.util.List;
 import java.util.Optional;
 
 import com.chainsys.vehicleservice.model.BookService;
-import com.chainsys.vehicleservice.model.VehicleType;
+import com.chainsys.vehicleservice.model.VehiclesType;
 
 public class VehicleTypeBookServiceDTO {
-	private Optional<VehicleType> vehicleType;
+	private Optional<VehiclesType> vehicleType;
 	private List<BookService> bookServiceList;
 
-	public Optional<VehicleType> getVehicleType() {
+	public Optional<VehiclesType> getVehicleType() {
 		return vehicleType;
 	}
 
-	public void setVehicleType(Optional<VehicleType> vehicleType) {
+	public void setVehicleType(Optional<VehiclesType> vehicleType) {
 		this.vehicleType = vehicleType;
 	}
 

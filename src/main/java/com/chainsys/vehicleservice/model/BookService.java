@@ -90,14 +90,6 @@ public class BookService {
 		this.serviceCentre = serviceCentre;
 	}
 
-	public UserDetails getUserDetails() {
-		return userdetails;
-	}
-
-	public void setUserDetails(UserDetails userDetails) {
-		this.userdetails = userDetails;
-	}
-
 	public int getBookingId() {
 		return bookingId;
 	}

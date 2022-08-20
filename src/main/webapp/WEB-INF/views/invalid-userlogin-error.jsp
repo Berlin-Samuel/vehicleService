@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,8 +9,13 @@
 <title>Error</title>
 </head>
 <body>
- <h2>Invalid Email and Password </h2>
- <div> Check your email name and password</div>
- <a href="/vehicleuserdetails/userlogin"> Return to Student login page</a>
+	<div>
+		<h2 align="center">Invalid Email and Password</h2>
+	</div>
+	<div>
+		<h2 align="center">Check Your Email and Password</h2>
+	</div>
+	<a href="/vehicleuserdetails/userlogin"> Return to User login
+		page</a>
 </body>
 </html>

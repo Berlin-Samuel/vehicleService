@@ -1,0 +1,93 @@
+@charset "ISO-8859-1";
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-image:
+		url(http://images2.fanpop.com/image/photos/13600000/Dog-wallpaper-dogs-13632654-1280-800.jpg);
+	background-size: 1366px 768px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	margin: 0;
+	font-family: cursive;
+}
+
+.container {
+	background-color: rgba(255, 255, 255, 0.5);
+	border-radius: 5px;
+	box-shadow: 10px 20px 25px rgba(0, 0, 0, .3);
+	overflow: hidden;
+	max-width: 100%;
+	width: 400px;
+}
+
+form h3 {
+	font-size: 32px;
+	font-weight: 500;
+	line-height: 42px;
+	text-align: center;
+}
+
+form {
+	padding: 10px 20px;
+	top: 50%;
+	left: 30%;
+}
+
+.button {
+	margin-top: 5px;
+	width: 100%;
+	background-color: #ffffff;
+	color: #080710;
+	padding: 5px 0;
+	font-size: 18px;
+	font-weight: 600;
+	border-radius: 5px;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.form-control {
+	margin-bottom: 10px;
+	padding-bottom: 5px;
+	position: relative;
+}
+
+.form-control label {
+	display: inline-block;
+	margin-bottom: 5px;
+	font-family: cursive;
+}
+
+.form-control input {
+	border: 2px solid #fefefe;
+	border-radius: 4px;
+	font-size: 14px;
+	display: block;
+	padding: 10px;
+	width: 100%;
+}
+
+.form-control input:focus {
+	outline: none;
+	border-color: #777;
+}
+
+.back {
+	font-size: 10px;
+	width: 5%;
+	position: absolute;
+	top: 5%;
+	left: 5%;
+}
+.add {
+	font-size: 10px;
+	width: 10%;
+	position: absolute;
+	bottom: 5%;
+	left: 50%;
+}

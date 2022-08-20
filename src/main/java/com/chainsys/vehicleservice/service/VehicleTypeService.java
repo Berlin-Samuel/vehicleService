@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.chainsys.vehicleservice.dto.VehicleTypeBookServiceDTO;
 import com.chainsys.vehicleservice.model.BookService;
-import com.chainsys.vehicleservice.model.VehicleType;
+import com.chainsys.vehicleservice.model.VehiclesType;
 import com.chainsys.vehicleservice.repository.BookServiceRepository;
 import com.chainsys.vehicleservice.repository.VehicleTypeRepository;
 
@@ -17,8 +17,8 @@ public class VehicleTypeService {
 	@Autowired
 	private BookServiceRepository bookServiceRepository;
 
-	public List<VehicleType> getVehicleType() {
-		List<VehicleType> vehicleType = vehicleTypeRepository.findAll();
+	public List<VehiclesType> getVehicleType() {
+		List<VehiclesType> vehicleType = vehicleTypeRepository.findAll();
 		return vehicleType;
 	}
 
@@ -26,19 +26,19 @@ public class VehicleTypeService {
 		vehicleTypeRepository.deleteById(id);
 	}
 
-	public void addVehicleType(VehicleType vehicleType) {
+	public void addVehicleType(VehiclesType vehicleType) {
 		vehicleTypeRepository.save(vehicleType);
 	}
 
-	public Optional<VehicleType> findVehicleTypebyId(String id) {
-		Optional<VehicleType> vehicleType = vehicleTypeRepository.findById(id);
+	public Optional<VehiclesType> findVehicleTypebyId(String id) {
+		Optional<VehiclesType> vehicleType = vehicleTypeRepository.findById(id);
 		return vehicleType;
 	}
-	public List<VehicleType> getVehicleTypeByUserid(int userId){
+	public List<VehiclesType> getVehicleTypeByUserid(int userId){
 		return vehicleTypeRepository.findByUserId(userId);
 	}
 	public VehicleTypeBookServiceDTO getVehicleTypeBookService(String user_id) {
-		Optional<VehicleType> vehicleType = vehicleTypeRepository.findById(user_id);
+		Optional<VehiclesType> vehicleType = vehicleTypeRepository.findById(user_id);
 		VehicleTypeBookServiceDTO dto = new VehicleTypeBookServiceDTO();
 		dto.setVehicleType(vehicleType);
 		List<BookService> bookService = bookServiceRepository.findByVehicleRegNumber(user_id);

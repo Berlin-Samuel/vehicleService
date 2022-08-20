@@ -16,6 +16,7 @@ import com.chainsys.vehicleservice.service.ServiceOfServiceCentre;
 @Controller
 @RequestMapping("/vehicleservicecentre")
 public class ServiceCentreController {
+	private static final String SERVICECENTRE = "redirect:/vehicleservicecentre/servicecentrelist";
 	@Autowired
 	private ServiceOfServiceCentre serviceOfServiceCentre;
 
@@ -36,7 +37,7 @@ public class ServiceCentreController {
 	@PostMapping("/addcentre")
 	public String addServiceCentre(@ModelAttribute("addservicecentre") ServiceCentre serviceCentre) {
 		serviceOfServiceCentre.addServiceCentre(serviceCentre);
-		return "redirect:/vehicleservicecentre/servicecentrelist";
+		return SERVICECENTRE;
 	}
 
 	@GetMapping("/updateservicecentre")
@@ -49,13 +50,13 @@ public class ServiceCentreController {
 	@PostMapping("/updatecentre")
 	public String updateServiceCentre(@ModelAttribute("updateservicecentre") ServiceCentre serviceCentre) {
 		serviceOfServiceCentre.addServiceCentre(serviceCentre);
-		return "redirect:/vehicleservicecentre/servicecentrelist";
+		return SERVICECENTRE;
 	}
 
 	@GetMapping("/deleteservicecentre")
 	public String deleteServiceCentre(@RequestParam("userid") int id) {
 		serviceOfServiceCentre.deleteServiceCentrebyId(id);
-		return "redirect:/vehicleservicecentre/servicecentrelist";
+		return SERVICECENTRE;
 	}
 
 	@GetMapping("/servicecentrelist")
@@ -64,6 +65,7 @@ public class ServiceCentreController {
 		model.addAttribute("allservicecentre", serviceCentre);
 		return "list-servicecentre";
 	}
+
 	@GetMapping("/getservicecentrebookservice")
 	public String getservicecentrebookservice(@RequestParam("user_id") int id, Model model) {
 		ServiceCentreBookServiceDTO dto = serviceOfServiceCentre.getServiceCentreBookServiceDTO(id);

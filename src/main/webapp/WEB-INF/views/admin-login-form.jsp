@@ -8,38 +8,7 @@
 <meta charset="ISO-8859-1">
 <title>Login</title>
 <style>
-body {
-	background-image:
-		url(https://c8.alamy.com/comp/M7TDMX/admin-it-information-technology-conceptual-word-cloud-for-for-design-M7TDMX.jpg);
-	background-repeat: no-repeat;
-	background-size: 1366px 768px;
-	text-align: center;
-}
-
-h1 {
-	font-family: lucida Handwriting, Cursive;
-	color: Black;
-}
-
-label {
-	font-family: Copperplate, Papyrus, fantasy;
-	font-size: 20px;
-	color: Black;
-}
-
-.form #input {
-	border-radius: 10px;
-}
-
-.login-form {
-	width: 75px;
-	height: 30px;
-	font-size: 17px;
-	background-color: Black;
-	border: 1px solid blue;
-	border-radius: 20px;
-	color: white;
-}
+<%@include file="/WEB-INF/css/admin-login-form.css"%></s
 </style>
 </head>
 <body>

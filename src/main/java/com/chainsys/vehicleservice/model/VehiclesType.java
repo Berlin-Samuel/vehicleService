@@ -10,11 +10,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.Past;
 
 @Entity
 @Table(name="vehicle_type")
-public class VehicleType {
+public class VehiclesType {
 	@Id
 	@Column(name = "vehicle_reg_number")
 	private String vehicleRegNumber;

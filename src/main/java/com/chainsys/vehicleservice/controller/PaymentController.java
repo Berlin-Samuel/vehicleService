@@ -48,12 +48,6 @@ public class PaymentController {
 		return "update-payment-form";
 	}
 
-	@PostMapping("/updatepayments")
-	public String updatePayment(@ModelAttribute("updatepayment") Payment payment) {
-		paymentService.addPayment(payment);
-		return "redirect:/vehiclepayment/paymentlist";
-	}
-
 	@GetMapping("/deletepayment")
 	public String deletePayment(@RequestParam("userid") int id) {
 		paymentService.deletePaymentbyId(id);

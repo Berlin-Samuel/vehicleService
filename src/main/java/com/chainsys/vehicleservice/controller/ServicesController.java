@@ -41,8 +41,6 @@ public class ServicesController {
 	@PostMapping("/addservice")
 	public String addService(@ModelAttribute("serviceadd") Services services,@ModelAttribute("payment")Payment payment,Model model) {
 		serviceOfService.addService(services);
-		System.out.println(payment.getBillAmount());
-//		paymentService.addPayment(payment);
 		return "redirect:/vehiclepayment/addpayment";
 	}
 

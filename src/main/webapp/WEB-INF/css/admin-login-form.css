@@ -1,1 +1,33 @@
 @charset "ISO-8859-1";
+body {
+	background-image:
+		url(http://www.creativarty.com/wp-content/uploads/2019/05/multitasking-guy-1600x1000.png);
+	background-repeat: no-repeat;
+	background-size: 1366px 768px;
+	text-align: center;
+}
+
+h1 {
+	font-family: lucida Handwriting, Cursive;
+	color: Black;
+}
+
+label {
+	font-family: Copperplate, Papyrus, fantasy;
+	font-size: 20px;
+	color: Black;
+}
+
+.form #input {
+	border-radius: 10px;
+}
+
+.login-form {
+	width: 75px;
+	height: 30px;
+	font-size: 17px;
+	background-color: Black;
+	border: 1px solid blue;
+	border-radius: 20px;
+	color: white;
+}

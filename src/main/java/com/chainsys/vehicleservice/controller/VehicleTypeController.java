@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import com.chainsys.vehicleservice.dto.VehicleTypeBookServiceDTO;
-import com.chainsys.vehicleservice.model.VehicleType;
+import com.chainsys.vehicleservice.model.VehiclesType;
 import com.chainsys.vehicleservice.service.VehicleTypeService;
 
 @Controller
@@ -22,14 +22,14 @@ public class VehicleTypeController {
 
 	@GetMapping("/getvehicletypebyid")
 	public String getVehicleTypeId(@RequestParam("id") String id, Model model) {
-		Optional<VehicleType> vehicleType = vehicleTypeService.findVehicleTypebyId(id);
+		Optional<VehiclesType> vehicleType = vehicleTypeService.findVehicleTypebyId(id);
 		model.addAttribute("vehicletype", vehicleType);
 		return "find-vehicletype-form";
 	}
 
 	@GetMapping("/addvehicletype")
 	public String showVehicleType(@RequestParam("userId")int id,Model model) {
-		VehicleType vehicleType = new VehicleType();
+		VehiclesType vehicleType = new VehicleType();
 		model.addAttribute("addvehicletype", vehicleType);
 		vehicleType.setUserId(id);
 		return "add-vehicletype-form";
