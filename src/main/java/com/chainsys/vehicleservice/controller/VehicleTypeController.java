@@ -29,14 +29,14 @@ public class VehicleTypeController {
 
 	@GetMapping("/addvehicletype")
 	public String showVehicleType(@RequestParam("userId")int id,Model model) {
-		VehiclesType vehicleType = new VehicleType();
+		VehiclesType vehicleType = new VehiclesType();
 		model.addAttribute("addvehicletype", vehicleType);
 		vehicleType.setUserId(id);
 		return "add-vehicletype-form";
 	}
 
 	@PostMapping("/addvehicle")
-	public String addVehicleType(@ModelAttribute("addvehicletype") VehicleType vehicleType,Model model) {
+	public String addVehicleType(@ModelAttribute("addvehicletype") VehiclesType vehicleType,Model model) {
 		vehicleTypeService.addVehicleType(vehicleType);
 		model.addAttribute("userId", vehicleType.getUserId());
 		return "vehicletype";
@@ -44,13 +44,13 @@ public class VehicleTypeController {
 
 	@GetMapping("/updatevehicletype")
 	public String showUpdateForm(@RequestParam("vehicleid") String id, Model model) {
-		Optional<VehicleType> vehicleType = vehicleTypeService.findVehicleTypebyId(id);
+		Optional<VehiclesType> vehicleType = vehicleTypeService.findVehicleTypebyId(id);
 		model.addAttribute("updatevehicletype", vehicleType);
 		return "update-vehicletype-form";
 	}
 
 	@PostMapping("/updatevehicle")
-	public String updateVehicleType(@ModelAttribute("updatevehicletype") VehicleType vehicleType) {
+	public String updateVehicleType(@ModelAttribute("updatevehicletype") VehiclesType vehicleType) {
 		vehicleTypeService.addVehicleType(vehicleType);
 		return "redirect:/vehicletype/vehicletypelist";
 	}
@@ -63,7 +63,7 @@ public class VehicleTypeController {
 
 	@GetMapping("/vehicletypelist")
 	public String getAllVehicleType(Model model) {
-		List<VehicleType> vehicleType = vehicleTypeService.getVehicleType();
+		List<VehiclesType> vehicleType = vehicleTypeService.getVehicleType();
 		model.addAttribute("allvehicletype", vehicleType);
 		return "list-vehicletype";
 	}

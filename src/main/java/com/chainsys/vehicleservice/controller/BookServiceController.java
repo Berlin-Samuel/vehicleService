@@ -1,7 +1,6 @@
 package com.chainsys.vehicleservice.controller;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import com.chainsys.vehicleservice.dto.BookServiceServiceDetailsDTO;
 import com.chainsys.vehicleservice.model.BookService;
-import com.chainsys.vehicleservice.model.VehicleType;
+import com.chainsys.vehicleservice.model.VehiclesType;
 import com.chainsys.vehicleservice.service.ServiceOfBookService;
 import com.chainsys.vehicleservice.service.ServiceOfServiceCentre;
 import com.chainsys.vehicleservice.service.VehicleTypeService;
@@ -37,7 +36,7 @@ public class BookServiceController {
 	@GetMapping("/addbookservice")
 	public String showServiceForm(@RequestParam("userId")int id,Model model) {
 		BookService bookService = new BookService();
-		List<VehicleType> vehicleTypeList=vehicleTypeService.getVehicleTypeByUserid(id);
+		List<VehiclesType> vehicleTypeList=vehicleTypeService.getVehicleTypeByUserid(id);
 		model.addAttribute("vehicleTypeList", vehicleTypeList);
 		bookService.setUserId(id);
 		model.addAttribute("addbookservice", bookService);

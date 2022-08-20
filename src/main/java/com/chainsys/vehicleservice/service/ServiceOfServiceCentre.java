@@ -18,8 +18,7 @@ public class ServiceOfServiceCentre {
 	private BookServiceRepository bookServiceRepository;
 
 	public List<ServiceCentre> getServiceCentre() {
-		List<ServiceCentre> serviceCentre = serviceCentreRepository.findAll();
-		return serviceCentre;
+		return serviceCentreRepository.findAll();
 	}
 
 	public void deleteServiceCentrebyId(int id) {
@@ -31,14 +30,14 @@ public class ServiceOfServiceCentre {
 	}
 
 	public ServiceCentre findServiceCentrebyId(int id) {
-		ServiceCentre serviceCentre = serviceCentreRepository.findById(id);
-		return serviceCentre;
+		return serviceCentreRepository.findById(id);
 	}
-	public ServiceCentreBookServiceDTO getServiceCentreBookServiceDTO(int user_id) {
-		ServiceCentre serviceCentre = serviceCentreRepository.findById(user_id);
+	
+	public ServiceCentreBookServiceDTO getServiceCentreBookServiceDTO(int userId) {
+		ServiceCentre serviceCentre = serviceCentreRepository.findById(userId);
 		ServiceCentreBookServiceDTO dto = new ServiceCentreBookServiceDTO();
         dto.setServiceCentre(serviceCentre);
-        List<BookService> bookServiceList = bookServiceRepository.findByServiceCentreServiceCentreId(user_id);
+        List<BookService> bookServiceList = bookServiceRepository.findByServiceCentreServiceCentreId(userId);
         dto.setBookService(bookServiceList);
         return dto;
     }
