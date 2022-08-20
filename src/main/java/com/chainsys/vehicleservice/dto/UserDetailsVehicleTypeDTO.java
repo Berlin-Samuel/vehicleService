@@ -2,13 +2,12 @@ package com.chainsys.vehicleservice.dto;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import com.chainsys.vehicleservice.model.UserDetails;
-import com.chainsys.vehicleservice.model.VehicleType;
+import com.chainsys.vehicleservice.model.VehiclesType;
 
 public class UserDetailsVehicleTypeDTO {
 	private UserDetails userDetails;
-	private List<VehicleType> vehicleTypeList = new ArrayList<VehicleType>();
+	private List<VehiclesType> vehicleTypeList = new ArrayList<>();
 
 	public UserDetails getUserDetails() {
 		return userDetails;
@@ -18,11 +17,11 @@ public class UserDetailsVehicleTypeDTO {
 		this.userDetails = userDetailsVehicleTypeDTO;
 	}
 
-	public List<VehicleType> getVehicleTypeList() {
+	public List<VehiclesType> getVehicleTypeList() {
 		return vehicleTypeList;
 	}
 
-	public void addVehicleType(VehicleType vehicleType) {
+	public void addVehicleType(VehiclesType vehicleType) {
 		vehicleTypeList.add(vehicleType);
 		
 	}

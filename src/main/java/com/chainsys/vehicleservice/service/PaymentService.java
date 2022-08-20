@@ -19,8 +19,7 @@ public class PaymentService {
 	private PaymentRepository paymentRepository;
 
 	public List<Payment> getPayment() {
-		List<Payment> payment = paymentRepository.findAll();
-		return payment;
+		return paymentRepository.findAll();
 	}
 
 	@Autowired
@@ -39,8 +38,7 @@ public class PaymentService {
 	}
 
 	public Payment findPaymentbyId(int id) {
-		Payment payment = paymentRepository.findById(id);
-		return payment;
+		return paymentRepository.findById(id);
 	}
 	public Payment getBookService(int id) {
 		return paymentRepository.findByBookingId(id);

@@ -3,7 +3,6 @@ package com.chainsys.vehicleservice.service;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.chainsys.vehicleservice.dto.BookServiceServiceDetailsDTO;
 import com.chainsys.vehicleservice.model.BookService;
 import com.chainsys.vehicleservice.model.ServiceDetails;
@@ -18,8 +17,7 @@ public class ServiceOfBookService {
 	private ServiceDetailsRepository serviceDetailsRepository;
 
 	public List<BookService> getBookService() {
-		List<BookService> bookService = bookServiceRepository.findAll();
-		return bookService;
+		return bookServiceRepository.findAll();
 	}
 
 	public void deleteBookServicebyId(int id) {
@@ -31,8 +29,7 @@ public class ServiceOfBookService {
 	}
 
 	public BookService findBookServicebyId(int id) {
-		BookService bookService = bookServiceRepository.findById(id);
-		return bookService;
+		return bookServiceRepository.findById(id);
 	}
 
 	public BookServiceServiceDetailsDTO getBookServiceServiceDetails(int id) {

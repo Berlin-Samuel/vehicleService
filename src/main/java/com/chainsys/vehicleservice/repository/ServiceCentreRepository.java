@@ -7,6 +7,7 @@ import org.springframework.data.repository.CrudRepository;
 import com.chainsys.vehicleservice.model.ServiceCentre;
 
 public interface ServiceCentreRepository extends CrudRepository<ServiceCentre, Integer> {
+	
 	ServiceCentre findById(int id);
 
 	ServiceCentre save(ServiceCentre serviceCentre);

@@ -15,8 +15,7 @@ public class ServiceOfServiceDetails {
 	private ServiceDetailsRepository serviceDetailsRepository;
 
 	public List<ServiceDetails> getServiceDetails() {
-		List<ServiceDetails> serviceDetails = serviceDetailsRepository.findAll();
-		return serviceDetails;
+		return serviceDetailsRepository.findAll();
 	}
 
 	public void deleteServiceDetailsbyId(ServiceDetailsCompositeKey id) {
@@ -28,8 +27,7 @@ public class ServiceOfServiceDetails {
 	}
 
 	public Optional<ServiceDetails> findServiceDetailsbyId(ServiceDetailsCompositeKey id) {
-		Optional<ServiceDetails> serviceDetails = serviceDetailsRepository.findById(id);
-		return serviceDetails;
+		return serviceDetailsRepository.findById(id);
 	}
 	public List<ServiceDetails> getServiceDetailsByBookingId(int id){
 		return serviceDetailsRepository.findByBookingId(id);
