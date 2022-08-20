@@ -49,7 +49,8 @@
 					</div>
 				</div>
 				<div id="table root">
-					<table>
+					<table><caption>
+					</caption>
 						<thead>
 							<tr>
 								<th>Service Detail Id</th>
