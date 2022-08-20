@@ -1,0 +1,43 @@
+@charset "ISO-8859-1";
+
+body {
+	background-image:
+		url("https://png.pngtree.com/png-clipart/20210312/original/pngtree-car-beauty-repair-service-png-image_6064174.jpg");
+	background-attachment: fixed;
+	background-size: 1366px 768px;
+}
+
+.form {
+	text-align: center;
+}
+
+h1 {
+	font-family: "Audiowide", sans-serif;
+	color: white;
+	font-style: oblique;
+	font-variant: small-caps;
+	font-size: 35px;
+	
+}
+
+h2 {
+	font-family: "Audiowide", sans-serif;
+	color: white;
+	font-style: oblique;
+	font-variant: small-caps;
+	font-size: 35px;
+	font-style: oblique;
+}
+
+.form .layout {
+	margin-left: 34%;
+	width: 360px;
+	height: 390px;
+	padding: 50px;
+	border: 6px solid black;
+	background-attachment: fixed;
+}
+
+a {
+	color: black;
+}

@@ -14,7 +14,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-
 @Entity
 @Table(name = "book_service")
 public class BookService {
@@ -50,7 +49,7 @@ public class BookService {
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "vehicle_reg_number", insertable = false, updatable = false, nullable = false)
-	private VehicleType vehicleType;
+	private VehiclesType vehicleType;
 
 	@OneToMany(mappedBy = "bookService", fetch = FetchType.LAZY)
 	private List<ServiceDetails> serviceDetails;
@@ -74,11 +73,11 @@ public class BookService {
 		this.serviceDetails = serviceDetails;
 	}
 
-	public VehicleType getVehicleType() {
+	public VehiclesType getVehicleType() {
 		return vehicleType;
 	}
 
-	public void setVehicleType(VehicleType vehicleType) {
+	public void setVehicleType(VehiclesType vehicleType) {
 		this.vehicleType = vehicleType;
 	}
 

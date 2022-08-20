@@ -36,13 +36,13 @@ public class UserDetails {
 	private String userPassword;
 
 	@OneToMany(mappedBy = "userDetails", fetch = FetchType.LAZY)
-	private List<VehicleType> vehicleTypeList;
+	private List<VehiclesType> vehicleTypeList;
 
-	public List<VehicleType> getVehicleTypeList() {
+	public List<VehiclesType> getVehicleTypeList() {
 		return vehicleTypeList;
 	}
 
-	public void setVehicleTypeList(List<VehicleType> vehicleTypeList) {
+	public void setVehicleTypeList(List<VehiclesType> vehicleTypeList) {
 		this.vehicleTypeList = vehicleTypeList;
 	}
 

@@ -6,55 +6,10 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Add Your Vehicle and Add BooK Service</title>
-<script src='https://kit.fontawesome.com/a076d05399.js'>
-	
+<script src='https://kit.fontawesome.com/a076d05399.js'>	
 </script>
 <style>
-body {
-	background-image:
-		url("https://png.pngtree.com/png-clipart/20210312/original/pngtree-car-beauty-repair-service-png-image_6064174.jpg");
-	background-width: 1366px;
-	background-height: 768px;
-	background-attachment: fixed;
-	background-size: cover;
-}
-
-.form {
-	text-align: center;
-}
-
-h1 {
-	font-family: "Audiowide", sans-serif;
-	font-color: white;
-	font-style: oblique;
-	font-variant: small-caps;
-	font-size: 35px;
-	font-style: oblique;
-}
-
-h2 {
-	font-family: "Audiowide", sans-serif;
-	font-color: white;
-	font-style: oblique;
-	font-variant: small-caps;
-	font-size: 35px;
-	font-style: oblique;
-}
-
-.form .layout {
-	margin-left: 34%;
-	width: 360px;
-	height: 390px;
-	padding: 50px;
-	border: 6px solid black;
-	background-attachment: fixed;
-	
-}
-
-a {
-	color: black;
-}
-</style>
+<%@include file="/WEB-INF/css/vehicletype-bookservice.css"%></style>
 </head>
 <body>
 	<div class="form">

@@ -1,7 +1,6 @@
 package com.chainsys.vehicleservice.dto;
 
 import java.util.List;
-
 import com.chainsys.vehicleservice.model.BookService;
 import com.chainsys.vehicleservice.model.UserDetails;
 
