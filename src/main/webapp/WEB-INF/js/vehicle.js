@@ -1,5 +1,5 @@
-	var vehicleTypeCheck = function() {
-			var nameRegex = new RegExp("^[a-zA-Z\s]+$");
+	let vehicleTypeCheck = function() {
+			let nameRegex = `^[a-zA-Z\s]+$`;
 			if (!document.form.vehicleType.value.match(nameRegex)) {
 				if (alert("Vehicle Type can't be empty and must contain only alphabets")) {
 					document.form.vehicleType.focus();
@@ -9,8 +9,8 @@
 				return false;
 			}
 		}
-		var vehicleColorCheck = function() {
-			var nameRegex = new RegExp("^[a-zA-Z\s]+$");
+		let vehicleColorCheck = function() {
+			let nameRegex = `^[a-zA-Z\s]+$`;
 			if (!document.form.vehicleColor.value.match(nameRegex)) {
 				if (alert("Vehicle Color can't be empty and must contain only alphabets")) {
 					document.form.vehicleColor.focus();
@@ -20,8 +20,8 @@
 				return false;
 			}
 		}
-		var vehicleModelCheck = function() {
-			var nameRegex = new RegExp("^[a-zA-Z\s]+$");
+		let vehicleModelCheck = function() {
+			let nameRegex = `^[a-zA-Z\s]+$`;
 			if (!document.form.vehicleModel.value.match(nameRegex)) {
 				if (alert("Vehicle Model can't be empty and must contain only alphabets")) {
 					document.form.vehicleModel.focus();
@@ -31,6 +31,7 @@
 				return false;
 			}
 		}
+		
 		function vehicleDatePurchaseCheck() {
 		    let vehicleDatePurchase = document.getElementById('vehicleDatePurchase').value;
 		    let now = new Date();
