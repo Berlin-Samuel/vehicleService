@@ -50,6 +50,7 @@
 					<tr>
 						<td>${ServiceDetails.serviceCharges}</td>
 						<td>${ServiceDetails.serviceDate}</td>
+						<td><a href="/vehicleservicedetails/deleteServiceDetails?id=${ServiceDetails.serviceDetailId}&bookId=${ServiceDetails.bookingId}">delete</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>

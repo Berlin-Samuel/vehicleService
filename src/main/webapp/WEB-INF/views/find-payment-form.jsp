@@ -32,6 +32,7 @@
 						<form:input path="billDate" readonly="true"/>
 					</div>
 			</form:form>
+			<a href="/home/home"><Button>Logout</Button></a>
 		</div>
 </body>
 </html>

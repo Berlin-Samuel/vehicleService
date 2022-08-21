@@ -98,4 +98,10 @@ public class ServiceDetailsController {
 		serviceOfServiceDetails.addServiceDetails(serviceDetails);
 		return "redirect:/vehicleservicedetails/servicedetailslist?id=" + bookingId;
 	}
+	@GetMapping("/deleteServiceDetails")
+	public String deleteServiceDetails(@RequestParam("id")int id,@RequestParam("bookId")int bookId,Model model) {
+		ServiceDetailsCompositeKey serviceDetailsCompositeKey=new ServiceDetailsCompositeKey(id,bookId);
+		serviceOfServiceDetails.deleteServiceDetailsbyId(serviceDetailsCompositeKey);
+		return "redirect:/vehicleservicedetails/servicedetailslist?id="+bookId;
+	}
 }
