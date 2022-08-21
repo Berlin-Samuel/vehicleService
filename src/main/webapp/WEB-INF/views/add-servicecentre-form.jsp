@@ -42,6 +42,7 @@
 					<form:button class="button">Add Service Centre</form:button>
 				</div>
 			</form:form>
+			<button class="back" onclick="history.back()">Back</button>
 		</div>
 	</div>
 </body>

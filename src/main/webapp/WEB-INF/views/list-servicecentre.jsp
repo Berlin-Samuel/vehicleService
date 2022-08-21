@@ -11,9 +11,9 @@
 <style>
 <%@include file ="/WEB-INF/css/style.css"%>
  .table-size{
-border:2px ;
-width:100%;
-cellpadding:2px;
+ border:2px ;
+ width:100%;
+ cellpadding:2px;
  }
   body {
     background-image:

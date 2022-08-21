@@ -22,7 +22,7 @@ cellpadding:2px;
 </head>
 <body>
 	<div>
-<button style="    font-size: 12px;
+<button style="font-size: 12px;
     background-color: #f44336;
     color: black;
     float: left;" onclick="history.back()"><span class="fa fa-home" style="font-size:38px;"></span></button>
@@ -55,6 +55,7 @@ cellpadding:2px;
 				</c:forEach>
 			</tbody>
 		</table>
+	</div>
 	</div>
 </body>
 </html>

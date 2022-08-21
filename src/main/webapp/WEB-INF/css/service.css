@@ -6,7 +6,7 @@
 
 body {
 	background-image:
-		url(https://m.media-amazon.com/images/M/MV5BMTM0MjQxNjI0M15BMl5BanBnXkFtZTcwMDU0MTQyMw@@._V1_.jpg);
+		url(https://s3-us-west-1.amazonaws.com/fasthouse/pages/106/images/1926/original.jpg);
 	background-size: 1366px 768px;
 	display: flex;
 	justify-content: center;
@@ -16,6 +16,9 @@ body {
 	font-family: cursive;
 }
 
+label{
+	color: white;
+}
 .container {
 	background-color: rgba(255, 255, 255, 0.5);
 	border-radius: 5px;
@@ -49,6 +52,13 @@ form {
 	border-radius: 5px;
 	cursor: pointer;
 	text-decoration: none;
+}
+
+h1 {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 25px;
+	color: white;
+	text-align: center;
 }
 
 .form-control {
