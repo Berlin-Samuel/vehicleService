@@ -14,6 +14,7 @@ import com.chainsys.vehicleservice.service.AdminService;
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
+	private static final String ADMINCONTROL="admin-login-form";
 	@Autowired
 	private AdminService adminService;
 
@@ -21,7 +22,7 @@ public class AdminController {
 	public String loginAccessform(Model model) {
 		Admin theAdm = new Admin();
 		model.addAttribute("admin", theAdm);
-		return "admin-login-form";
+		return ADMINCONTROL;
 	}
 
 	@PostMapping("/checkadminlogin")
@@ -31,7 +32,7 @@ public class AdminController {
 			return "admin-page";
 		} else
 			model.addAttribute("result","Invalid AdminName or Password!!");
-			return "admin-login-form";
+			return ADMINCONTROL;
 	}
 
 	@GetMapping("/adminpage")
