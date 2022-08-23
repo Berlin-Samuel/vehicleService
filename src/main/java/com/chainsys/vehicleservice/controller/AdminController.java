@@ -15,6 +15,7 @@ import com.chainsys.vehicleservice.service.AdminService;
 @RequestMapping("/admin")
 public class AdminController {
 	private static final String ADMINCONTROL="admin-login-form";
+	
 	@Autowired
 	private AdminService adminService;
 
