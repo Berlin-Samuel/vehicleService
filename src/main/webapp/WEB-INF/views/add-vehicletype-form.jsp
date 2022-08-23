@@ -26,12 +26,24 @@
 					pattern="^[A-Z]{2}\s[0-9]{2}\s[A-Z]{1,2}\s[0-9]{4}$"
 					title="Register Number can't be empty" />
 			</div>
-			<div class="form-control-vehicletype">
+			<%-- <div class="form-control-vehicletype">
 				<label for="vehicleType">Vehicle Type</label>
 				<form:input path="vehicleType" name="vehicleRegNumber"
 					placeholder="Enter Your Vehicle Type" required="true"
 					onblur="vehicleTypeCheck();" />
-			</div>
+					
+			</div> --%>
+			
+			<div class="form-control-vehicletype">
+					  <label for="vehicleType">Vehicle Type</label>
+					    <br>
+					    <select name="vehicleType">
+					    <option>--Please select Vehicle type--</option>
+					    <option value="Bike">Bike</option>
+					    <option value="Car">Car</option>
+						</select>
+				</div>
+				
 			<div class="form-control-vehicletype">
 				<label for="vehicleColor">Vehicle Color</label>
 				<form:input path="vehicleColor" name="vehicleColor"

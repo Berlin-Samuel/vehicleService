@@ -25,11 +25,12 @@ public class AdminController {
 	}
 
 	@PostMapping("/checkadminlogin")
-	public String checkingAccess(@Valid @ModelAttribute("admin") Admin theAdm) {
+	public String checkingAccess(@Valid @ModelAttribute("admin") Admin theAdm, Model model) {
 		Admin admin = adminService.getAdminDetailsByNameAndPassword(theAdm.getAdminEmail(), theAdm.getAdminPassword());
 		if (admin != null) {
 			return "admin-page";
 		} else
+			model.addAttribute("result","Invalid AdminName or Password!!");
 			return "admin-login-form";
 	}
 

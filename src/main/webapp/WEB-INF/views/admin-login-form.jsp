@@ -12,29 +12,32 @@
 </style>
 </head>
 <body>
+<a href="/home/home"><button class="back-button">Go
+			Back</button></a>
 	<div id="root" style="width: auto;">
 		<div class="form">
 			<form:form action="checkadminlogin" method="post"
 				modelAttribute="admin">
 				<h1>****Hello Admin****</h1>
-				<div style="margin: 14px 0px 14px 0px;">
-					<strong><label for="adminEmail" style="font-size: 35px;">Email :</label></strong>
+				<div class="adminemail">
+					<strong><label for="adminEmail">Email :</label></strong>
 					<form:input path="adminEmail" id="input"
-						placeholder="Enter Your Email"
-						style="width: 20%;height: 25px;font-size: 17px;" />
+						placeholder="Enter Your Email" />
 				</div>
-				<div style="margin: 14px 0px 14px 0px;">
+				<div class="adminpass">
 					<strong> <label class="pa" for="adminPassword"
 						style="font-size: 35px;">Password :</label> <form:input
 							path="adminPassword" type="password" id="input"
-							placeholder="Enter Your Password"
-							style="width: 20%;height: 25px;font-size: 17px;" />
+							placeholder="Enter Your Password" />
 					</strong>
 				</div>
+				<div class="error-msg">${result}
+            	</div>
 				<div style="margin-top: 20px; margin-left: 30px;">
 					<form:button class="login-form">Login in</form:button>
 				</div>
 			</form:form>
+			
 		</div>
 	</div>
 </body>
