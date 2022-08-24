@@ -6,12 +6,15 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Add Your Vehicle and Add BooK Service</title>
-<script src='https://kit.fontawesome.com/a076d05399.js'>	
+<script src='https://kit.fontawesome.com/a076d05399.js'>
 </script>
 <style>
-<%@include file="/WEB-INF/css/vehicletype-bookservice.css"%></style>
+<%@ include file="/WEB-INF/css/vehicletype-bookservice.css"%>
+</style>
 </head>
 <body>
+<a href="/vehicleuserdetails/userlogin"><button class="back-button">Go
+			Back</button></a>
 	<div class="form">
 		<form:form action="index" method="post">
             <h1>Add Vehicle and Add BooK Service</h1>

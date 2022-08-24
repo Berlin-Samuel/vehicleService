@@ -11,8 +11,7 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 <%@include file ="/WEB-INF/css/style.css"%>
-
-.table-size {
+ .table-size {
 	border: 2px;
 	width: 100%;
 	cellpadding: 2px;
@@ -31,7 +30,7 @@ body {
 			onclick="history.back()">
 			<span class="fa fa-home" style="font-size: 38px;"></span>
 		</button>
-		<h1>ROOM LIST</h1>
+		<h1>USER LIST</h1>
 
 		<div id="table root">
 			<table class="table-size">

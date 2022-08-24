@@ -1,81 +1,106 @@
+*, *:before, *:after {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
 body {
 	background-image:
 		url(https://images.pexels.com/photos/162553/keys-workshop-mechanic-tools-162553.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
-	background-repeat: no-repeat;
 	background-size: 1366px 768px;
+	background-color: black;
+}
+
+.background {
+	width: 430px;
+	height: 560px;
+	position: absolute;
+	transform: translate(-50%, -50%);
+	left: 50%;
+	top: 50%;
+}
+
+form {
+	height: 500px;
+	width: 400px;
+	background-color: rgba(255, 255, 255, 0.13);
+	position: absolute;
+	transform: translate(-50%, -50%);
+	top: 50%;
+	left: 50%;
+	border-radius: 10px;
+	backdrop-filter: blur(10px);
+	border: 2px solid rgba(255, 255, 255, 0.1);
+	box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+	padding: 50px 35px;
+}
+
+form * {
+	font-family: sans-serif;
+	font-style: italic;
+	color: black;
+	letter-spacing: 0.5px;
+	outline: none;
+	border: none;
+}
+
+form h1 {
+	font-size: 40px;
+	font-weight: 700;
+	line-height: 42px;
 	text-align: center;
 }
 
-h1 {
-	font-family: lucida Handwriting, Cursive;
-	color: #f50202;
-	font-size: 45px;
-}
-
-.useremail {
-	margin: 14px 0px 14px 0px;
-}
-
-.useremail label {
-	font-size: 35px;
-}
-
-.useremail input {
-	width: 20%;
-	height: 25px;
-	margin-left: 135px;
-	font-size: 17px;
-}
-
-.userpass {
-	margin: 14px 0px 14px 0px;
-}
-
-.userpass label {
-	font-size: 35px;
-}
-
-.userpass input {
-	width: 20%;
-	height: 25px;
-	margin-left: 80px;
-	font-size: 17px;
-}
-
 label {
-	font-family: Copperplate, Papyrus, fantasy;
-	color: #f50202;
+	display: block;
+	margin-top: 30px;
+	font-size: 30px;
+	font-weight: 500;
 }
 
-#input {
-	border-radius: 10px;
+input {
+	display: block;
+	height: 50px;
+	width: 100%;
+	background-color: rgba(255, 255, 255, 0.07);
+	border-radius: 3px;
+	padding: 0 10px;
+	margin-top: 8px;
+	font-size: 14px;
+	font-weight: 300;
 }
 
-.login-form {
-	width: 75px;
-	height: 30px;
-	font-size: 17px;
-	background-color: black;
-	border: 1px solid blue;
-	border-radius: 20px;
-	color: white;
+::placeholder {
+	color: #e5e5e5;
+}
+
+button {
+	margin-top:20px;
+	width: 100%;
+	background-color: #ffffff;
+	color: #080710;
+	padding: 15px 0;
+	font-size: 18px;
+	font-weight: 600;
+	border-radius: 5px;
+	cursor: pointer;
 }
 
 .back-button {
-	border: none;
-	background-color: #ff4d4d;
-	font-size: 15px;
-	color: white;
-	margin: auto;
-	width: 100px;
-	display: block;
-	border-radius: 10px;
-	padding: 10px 0;
-	font-weight: bold;
-	cursor: pointer;
-	margin-left: 1%;
+    border: none;
+    background-color: #ff4d4d;
+    font-size:15px;
+    color: white;
+    margin: auto;
+    width: 100px;
+    display: block;
+    border-radius: 10px;
+    padding: 10px 0;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left:1%;
+    margin-top:1%;
 }
-
-a {
-	text-decoration: none;
+a{
+text-decoration:none;
 }

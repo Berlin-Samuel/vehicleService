@@ -10,12 +10,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.chainsys.vehicleservice.model.Admin;
 import com.chainsys.vehicleservice.service.AdminService;
+import com.chainsys.vehicleservice.validation.InvalidInputDataException;
 
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
-	private static final String ADMINCONTROL="admin-login-form";
-	
+	private static final String ADMINCONTROL = "admin-login-form";
+
 	@Autowired
 	private AdminService adminService;
 
@@ -28,12 +29,19 @@ public class AdminController {
 
 	@PostMapping("/checkadminlogin")
 	public String checkingAccess(@Valid @ModelAttribute("admin") Admin theAdm, Model model) {
-		Admin admin = adminService.getAdminDetailsByNameAndPassword(theAdm.getAdminEmail(), theAdm.getAdminPassword());
-		if (admin != null) {
+		Admin admin = null;
+		try {
+			admin = adminService.getAdminDetailsByNameAndPassword(theAdm.getAdminEmail(), theAdm.getAdminPassword());
+
+			if (admin == null)
+				throw new InvalidInputDataException("Invalid AdminName or Password!!");
+
 			return "admin-page";
-		} else
-			model.addAttribute("result","Invalid AdminName or Password!!");
+		} catch (InvalidInputDataException exp) {
+			model.addAttribute("result", exp.getMessage());
 			return ADMINCONTROL;
+		}
+
 	}
 
 	@GetMapping("/adminpage")

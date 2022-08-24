@@ -14,30 +14,26 @@
 <body>
 	<a href="/home/home"><button class="back-button">Go
 			Back</button></a>
-	<div id="root" style="width: auto;">
+			
 		<div class="form">
 			<form:form action="checkuserlogin" method="post"
-				modelAttribute="user">
+				modelAttribute="user"  class="container" name="form">
+				
 				<h1>User Login</h1>
-				<div class="useremail">
-					<strong><label for="email">Email :</label></strong>
+				
+					<label for="email">Email :</label>
 					<form:input path="userEmail" id="input"
-						placeholder="Enter Your Email" />
-				</div>
-				<div class="userpass">
-					<strong> <label class="pa" for="password">Password
-							:</label> </strong> <form:input path="userPassword" type="password" id="input"
-							placeholder="Enter Your Password" />
-				</div>
-				<div>
-					<form:button class="login-form">Sign in</form:button>
-					<form:button class="login-form" style="margin-left: 12px;">
-						<a href="/vehicleuserdetails/adduserdetails"
-							style="text-decoration: none; color: white;">Sign up</a>
+						placeholder="Enter Your Email" required="true" />
+						
+					<label class="pa" for="password">Password
+							:</label> <form:input path="userPassword" type="password" id="input"
+							placeholder="Enter Your Password" required="true" />
+				
+					<form:button class="button">Sign in</form:button>
+					<form:button class="button">
+						<a href="/vehicleuserdetails/adduserdetails">Sign up</a>
 					</form:button>
-				</div>
 			</form:form>
 		</div>
-	</div>
 </body>
 </html>

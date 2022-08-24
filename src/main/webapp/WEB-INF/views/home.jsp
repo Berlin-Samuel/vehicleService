@@ -13,13 +13,11 @@
 	<nav>
 		<div class="menu">
 			<div class="logo">
-				<a href="#">VEHICLE SERVICE MAINTENANCE</a>
+				<a href="#">VEHICLE SERVICE</a>
 			</div>
 			<ul>
 				<li><a href="/vehicleuserdetails/userlogin">User Login</a></li>
 				<li><a href="/admin/login">Admin Login</a></li>
-				
-
 			</ul>
 		</div>
 	</nav>

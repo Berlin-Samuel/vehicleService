@@ -34,7 +34,7 @@
 				<div class="error-msg">${result}
             	</div>
 				<div style="margin-top: 20px; margin-left: 30px;">
-					<form:button class="login-form">Login in</form:button>
+					<form:button class="login-form">Login</form:button>
 				</div>
 			</form:form>
 			

@@ -74,3 +74,15 @@ h1 {
 	background-color: #ffffff;
 	color: #080710;
 }
+
+
+.back {
+	background-color: #ff4d4d;
+    font-size:15px;
+ 	width: 5%;
+	margin: auto;
+	border-radius: 10px;
+	border-radius: 10px;
+	top: 5%;
+	left: 5%;
+}

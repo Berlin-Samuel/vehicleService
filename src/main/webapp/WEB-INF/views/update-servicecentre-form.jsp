@@ -16,20 +16,22 @@
 		<div id="form">
 			<form:form action="updatecentre" method="post"
 				modelAttribute="updateservicecentre">
+				<div><label for="serviceCentreId"></label><form:input path="serviceCentreId"
+						 Type="hidden" /></div>
 				<div class="form-control">
 					<label for="centreLocation">Centre Location</label>
 					<form:input path="centreLocation"
-						placeholder="Enter the Centre Location" required="true" />
+						placeholder="Enter the Centre Location" required="true" readonly="true"/>
 				</div>
 				<div class="form-control">
 					<label for="centrePhoneNumber">Centre Phone Number</label>
 					<form:input path="centrePhoneNumber"
-						placeholder="Enter the Centre Phone Number" required="true" />
+						placeholder="Enter the Centre Phone Number" required="true" readonly="true"/>
 				</div>
 				<div class="form-control">
 					<label for="centreEmail">Centre Email</label>
 					<form:input path="centreEmail" placeholder="Enter the Centre Email"
-						required="true" />
+						required="true" readonly="true"/>
 				</div>
 				<div class="form-control">
 					<label for="centreAddress">Centre Address</label>
