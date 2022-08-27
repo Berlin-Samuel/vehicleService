@@ -1,5 +1,6 @@
 package com.chainsys.vehicleservice.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,6 +31,18 @@ public class ServiceOfService {
 
 	public Services findServicebyId(int id) {
 		return serviceRepository.findById(id);
+	}
+	public List<String> getServiceName(List<Integer>serviceDetailId){
+		List<String> serviceName=new ArrayList<>();
+		List<Services> services=serviceRepository.findAll();
+		for(int i=0;i<serviceDetailId.size();i++) {
+			for(int j=0;j<services.size();j++) {
+				if(serviceDetailId.get(i)==services.get(j).getServiceDetailId()) {
+					serviceName.add(services.get(j).getServiceType());
+				}
+			}
+		}
+		return serviceName;
 	}
 
 	public ServicesServiceDetailsDTO getServicesServiceDetails(int user_id) {

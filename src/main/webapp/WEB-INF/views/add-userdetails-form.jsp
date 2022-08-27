@@ -48,10 +48,12 @@
 			<form:errors path="userEmail" cssClass="text-danger" />
 			<div class="form-control-userdetails">
 				<label for="userPassword">Password</label>
-				<form:input path="userPassword" placeholder="Enter Your Password"
+				<form:input path="userPassword" type="password" placeholder="Enter Your Password"
 					required="true" onblur="userPasswordCheck();" />
 			</div>
 			<form:errors path="userPassword" cssClass="text-danger" />
+			<div class="error-msg">${error}
+            	</div>
 			<div>
 				<form:button class="button" type="submit" name="submit">Sign Up</form:button>
 			</div>

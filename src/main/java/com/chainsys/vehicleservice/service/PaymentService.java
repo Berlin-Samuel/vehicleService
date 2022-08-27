@@ -34,6 +34,7 @@ public class PaymentService {
 		payment.setBillDate(Logic.getInstanceDate());
 		List<ServiceDetails>serviceDetails=serviceOfServiceDetails.getServiceDetailsByBookingId(payment.getBookingId());
 		payment.setBillAmount(Logic.getTotalServiceAmount(serviceDetails));
+		payment.setPaymentStatus("notpaid");
 		paymentRepository.save(payment);
 	}
 

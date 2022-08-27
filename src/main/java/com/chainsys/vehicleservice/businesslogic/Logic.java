@@ -34,4 +34,7 @@ public class Logic {
 	private Logic() {
 
 	}
+	public static Date getDeliveryDate(Date serviceDate) {
+		return Date.valueOf(serviceDate.toLocalDate().plusDays(2));
+	}
 }

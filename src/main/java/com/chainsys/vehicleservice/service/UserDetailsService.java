@@ -27,7 +27,7 @@ public class UserDetailsService {
 	public List<UserDetails> getUserDetails() {
 		return userDetailsRepository.findAll();
 	}
-
+	
 	public void deleteUserDetailsbyId(int id) {
 		userDetailsRepository.deleteById(id);
 	}
@@ -59,7 +59,9 @@ public class UserDetailsService {
 		dto.setBookService(bookService);
 		return dto;
 	}
-
+	public UserDetails checkUserSingup(String email) {
+		return userDetailsRepository.findByUserEmail(email);
+	}
 	public UserDetails getUserDetailsByNameAndPassword(String email, String password) {
 
 		return userDetailsRepository.findByUserEmailAndUserPassword(email, password);

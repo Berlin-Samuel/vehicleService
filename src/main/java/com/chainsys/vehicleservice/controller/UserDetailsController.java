@@ -1,11 +1,9 @@
 package com.chainsys.vehicleservice.controller;
 
 import java.util.List;
-import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,6 +13,7 @@ import com.chainsys.vehicleservice.dto.UserDetailsBookServiceDTO;
 import com.chainsys.vehicleservice.dto.UserDetailsVehicleTypeDTO;
 import com.chainsys.vehicleservice.model.UserDetails;
 import com.chainsys.vehicleservice.service.UserDetailsService;
+import com.chainsys.vehicleservice.validation.InvalidInputDataException;
 
 @Controller
 @RequestMapping("/vehicleuserdetails")
@@ -37,12 +36,19 @@ public class UserDetailsController {
 	}
 
 	@PostMapping("/adduser")
-	public String addUserDetail(@Valid @ModelAttribute("adduserdetails") UserDetails userDetails, Errors errors) {
-		if (errors.hasErrors()) {
-			return "add-userdetails-form";
-		} else
-			userDetailsService.addUserDetails(userDetails);
-		return "redirect:/vehicleuserdetails/userlogin";
+	public String addUserDetail(@ModelAttribute("adduserdetails") UserDetails userDetails, Model model) {
+		UserDetails userDetail=null;
+			try {
+				 userDetail = userDetailsService.checkUserSingup(userDetails.getUserEmail());
+				if(userDetail==null) {
+					userDetailsService.addUserDetails(userDetails);
+			      return "redirect:/vehicleuserdetails/userlogin";
+				}else
+					throw new InvalidInputDataException("User Already Exist");
+			}catch(InvalidInputDataException exp) {
+				model.addAttribute("error", exp.getMessage());
+				return "add-userdetails-form";
+			}
 	}
 
 	@GetMapping("/updateuserdetails")

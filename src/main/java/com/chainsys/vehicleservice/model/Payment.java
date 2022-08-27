@@ -24,6 +24,8 @@ public class Payment {
 	private int bookingId;
 	@Column(name = "bill_amount")
 	private int billAmount;
+	@Column(name="payment_status")
+	private String paymentStatus;
 	@Column(name = "bill_date")
 	private Date billDate;
 
@@ -71,4 +73,12 @@ public class Payment {
 		this.billDate = billDate;
 	}
 
+	public String getPaymentStatus() {
+		return paymentStatus;
+	}
+
+	public void setPaymentStatus(String paymentStatus) {
+		this.paymentStatus = paymentStatus;
+	}
+	
 }

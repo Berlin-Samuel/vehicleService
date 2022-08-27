@@ -57,7 +57,7 @@
 		</table>
 	</div>
 	<div>
-		<a href="/vehiclepayment/addpayment?id=${bookId}">
+		<a href="/vehiclepayment/addpayment?id=${bookId}"> 
 		<button class="button" type="submit" name="submit">Payment</button></a>
 	</div>
 </body>
